@@ -12,12 +12,12 @@ Spring.prototype.update = function() {
   // calculate the target position
   // target = normalize(to - from) * length + from
 
-  var diff = p5.Vector.sub(this.toNode, this.fromNode);
+  let diff = p5.Vector.sub(this.toNode, this.fromNode);
   diff.normalize();
   diff.mult(this.length);
-  var target = p5.Vector.add(this.fromNode, diff);
+  let target = p5.Vector.add(this.fromNode, diff);
 
-  var force = p5.Vector.sub(target, this.toNode);
+  let force = p5.Vector.sub(target, this.toNode);
   force.mult(0.5);
   force.mult(this.stiffness);
   force.mult(1 - this.damping);

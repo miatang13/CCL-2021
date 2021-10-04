@@ -1,7 +1,7 @@
 //nodeClassFile
 
 //constructor
-var Node = function(n, h, x, y, minX, maxX, minY, maxY) {
+var Node = function(n, h, x, y, d, minX, maxX, minY, maxY) {
   p5.Vector.call(this, x, y, 0);
   this.name = n;
   this.links = [];
@@ -14,16 +14,18 @@ var Node = function(n, h, x, y, minX, maxX, minY, maxY) {
   this.maxY = Number.MAX_VALUE || maxY;
 
   //physicsValues
-  this.radius = nodeDiameters[h] + 200; // Radius of impact
+  this.radius = d + 200 || 200; // Radius of impact
   this.ramp = 1; // Influences the shape of the function
   this.strength = -1; // Strength: positive value attracts, negative value repels
   this.damping = 0.5;
 
   //posAttributes
-  this.velocity = new p5.Vector(0, 0);
-  this.pVelocity = new p5.Vector(0, 0);
+  this.velocity = myp5.createVector();
+  this.pVelocity = myp5.createVector();
   this.maxVelocity = 10;
 }
+
+Node.prototype = Object.create(p5.Vector.prototype);
 
 //pushPhysics
 Node.prototype.attractNodes = function(nodeArray) {
@@ -85,7 +87,7 @@ Node.prototype.update = function() {
 //updateLinks
 Node.prototype.link = function(linkArray) {
   for (let i = 0; i < linkArray.length; i++) {
-    this.links.push(linkArray[i]);
+    this.links.push(a);
   }
 }
 
