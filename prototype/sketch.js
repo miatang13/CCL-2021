@@ -16,7 +16,7 @@ let spacing = 10;
 let rad = 0;
 
 //springProperties
-let sLength = 100;
+let sLength = 150;
 let sStiffness = 1;
 
 function preload() {
