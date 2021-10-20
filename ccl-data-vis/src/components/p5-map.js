@@ -1,19 +1,20 @@
 import React from "react";
 import Sketch from "react-p5";
-import { JSON_DATA_URL } from "../p5/constants";
+import { MAP_DATA } from "../data/map.js";
+import { getCategories } from "../data/utility";
 
 function P5map() {
-  console.log("hi");
   const setup = (p5, canvasParentRef) => {
-    console.log(canvasParentRef);
-    p5.createCanvas(500, 400).parent(canvasParentRef);
-    p5.loadJSON(JSON_DATA_URL);
+    console.log("Set up p5 with", canvasParentRef);
+    p5.createCanvas(window.innerWidth * 0.8, window.innerHeight * 0.9).parent(
+      canvasParentRef
+    );
+    console.log("Get some data", getCategories(MAP_DATA));
   };
 
   const draw = (p5) => {
-    p5.background(255, 130, 20);
+    p5.background(200, 200, 200);
     p5.ellipse(100, 100, 100);
-    p5.ellipse(300, 100, 100);
   };
 
   return <Sketch setup={setup} draw={draw} />;
