@@ -1,11 +1,13 @@
 import React from "react";
 import Sketch from "react-p5";
+import { JSON_DATA_URL } from "../p5/constants";
 
 function P5map() {
   console.log("hi");
   const setup = (p5, canvasParentRef) => {
     console.log(canvasParentRef);
     p5.createCanvas(500, 400).parent(canvasParentRef);
+    p5.loadJSON(JSON_DATA_URL);
   };
 
   const draw = (p5) => {
