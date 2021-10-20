@@ -84,9 +84,9 @@ class Node {
 
   drawNode() {
     fill(255);
-    ellipse(this.x, this.y, 50, 50);//this.radius, this.radius);
+    ellipse(this.x, this.y, 50, 50); //this.radius, this.radius);
     fill(0);
-    ellipse(this.x, this.y, 50, 50);//this.radius - 4, this.radius - 4);
+    ellipse(this.x, this.y, 50, 50); //this.radius - 4, this.radius - 4);
 
     //textSize(10);
     fill(255);
@@ -115,19 +115,22 @@ class T3 extends Node {
     super(n, h, x, y);
     this.radius = 100;
     this.links = [];
+    this.curLinks = [];
   }
 
   link(linkArray) {
     for (let i = 0; i < linkArray.length; i++) {
-      this.links.push(a);
+      this.links.push(linkArray[i]);
+      this.curLinks.push(createA(this.links[0], this.links[1], '_blank'));
     }
   }
 
   drawNode() {
+
     fill(255);
-    ellipse(this.x, this.y, 50, 50);//this.radius, this.radius);
+    ellipse(this.x, this.y, 50, 50); //this.radius, this.radius);
     fill(0);
-    ellipse(this.x, this.y, 50, 50);//this.radius - 4, this.radius - 4);
+    ellipse(this.x, this.y, 50, 50); //this.radius - 4, this.radius - 4);
 
     //textSize(10);
     textAlign(CENTER);
@@ -140,9 +143,11 @@ class T3 extends Node {
 
     for (let j = 0; j < numLinks; j++) {
       let tX = this.x - textSize / 2 + (j * spacing);
-      textSize(5);
+      //p5.textSize(5);
       fill(255);
-      this.links[j].position(tX, this.y - 20);
+      for (let link of this.curLinks) {
+        link.position(this.x, this.y);
+      }
     }
   }
 }

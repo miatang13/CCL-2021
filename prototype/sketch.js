@@ -110,7 +110,7 @@ function initNodesAndSprings() {
 
       //links
       for (let i = 1; i < lArr.length; i += 2) {
-        let a = createA(lArr[1], lArr[0]);
+        let a = [lArr[2], lArr[1]];
         newNode.link(a);
       }
     }
