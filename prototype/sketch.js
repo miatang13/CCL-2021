@@ -37,6 +37,9 @@ function draw() {
   background(225);
 
   //repelNodes
+  nodes[0].x = windowWidth / 2;
+  nodes[0].y = windowHeight / 2;
+
   for (let i = 0; i < nodes.length; i++) {
     nodes[i].attractNodes(nodes);
   }
@@ -68,13 +71,18 @@ function initNodesAndSprings() {
   //centerReference
   let cx = windowWidth / 2;
   let cy = windowHeight / 2;
+  let rFactor = 150;
 
   //fillNodeHierarchy
-  let newNode = new Node("2020 Census", 0, cx, cy);
+  let newNode = new Node("2020 Census", cx, cy);
   let d0 = [newNode];
   let d1 = [];
   let d2 = [];
   let d3 = [];
+
+  let nD1 = 0;
+  let nD2 = 0;
+  let nD3 = 0;
 
   //parseData
   for (let row of txt) {
@@ -83,7 +91,7 @@ function initNodesAndSprings() {
 
     if (row[0] === "*") { //Tier 1
       //node
-      newNode = new T1(row, 1, cx + rx, cy + ry);
+      newNode = new T1(row, cx + rx, cy + ry);
       d1.push(newNode);
 
       //spring
@@ -91,7 +99,7 @@ function initNodesAndSprings() {
       springs.push(newSpring);
 
     } else if (row[0] === "-") { //Tier 2
-      newNode = new T2(row, 2, cx + rx, cy + ry);
+      newNode = new T2(row, cx + rx, cy + ry);
       d2.push(newNode);
 
       //spring
@@ -101,7 +109,7 @@ function initNodesAndSprings() {
     } else { //Tier 3
       let lArr = row.split(",");
       //node
-      newNode = new T3(lArr[0], 3, cx + rx, cy + ry);
+      newNode = new T3(lArr[0], cx + rx, cy + ry);
       d3.push(newNode);
 
       //spring
@@ -115,6 +123,41 @@ function initNodesAndSprings() {
       }
     }
   }
+
   nodes = d0.concat(d1, d2);
   nodes = nodes.concat(d3);
+
+  for (let n of nodes) {
+    let rScale = 0;
+    let totalN = 1;
+    let curreN = 0;
+    let dx = 0;
+    let dy = 0;
+
+    if (n instanceof T1) {
+      rScale = rFactor;
+      curreN = nD1;
+      nD1 += 1;
+      totalN = d1.length;
+    } else if (n instanceof T2) {
+      rScale = rFactor * 2;
+      curreN = nD2;
+      nD2 += 1;
+      totalN = d2.length;
+    } else if (n instanceof T3) {
+      rScale = rFactor * 3;
+      curreN = nD3;
+      nD3 += 1;
+      totalN = d3.length;
+    }
+
+    let angle = curreN / totalN * TWO_PI;
+    print(angle);
+
+    dx = rScale * cos(angle);
+    dy = rScale * sin(angle);
+
+    n.x = cx + dx;
+    n.y = cy + dy;
+  }
 }

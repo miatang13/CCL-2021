@@ -4,7 +4,7 @@ class Spring {
     this.fromNode = fromNode;
     this.toNode = toNode;
 
-    this.length = length || 100;
+    this.length = length || 75;
     this.stiffness = stiffness || 0.6;
     this.damping = damping || 0.9;
   }

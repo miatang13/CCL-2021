@@ -3,7 +3,7 @@
 //constructor
 class Node {
 
-  constructor(n, h, x, y) {
+  constructor(n, x, y) {
 
     p5.Vector.call(this, x, y, 0);
     this.name = n;
