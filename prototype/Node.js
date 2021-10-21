@@ -2,9 +2,7 @@
 
 //constructor
 class Node {
-
   constructor(n, x, y) {
-
     p5.Vector.call(this, x, y, 0);
     this.name = n;
 
@@ -27,7 +25,6 @@ class Node {
   }
 
   attractNodes(nodeArray) {
-
     for (var i = 0; i < nodeArray.length; i++) {
       var otherNode = nodeArray[i];
       // Stop when empty
@@ -40,7 +37,6 @@ class Node {
   }
 
   attract(otherNode) {
-
     let thisNodeVector = new p5.Vector(this.x, this.y);
     let otherNodeVector = new p5.Vector(otherNode.x, otherNode.y);
     let d = thisNodeVector.dist(otherNodeVector);
@@ -48,7 +44,7 @@ class Node {
     let bounce = this.radius * 2;
     if (d > 0 && d < bounce) {
       var s = pow(d / bounce, 1 / this.ramp);
-      var f = s * 10 * this.strength * (1 / (s + 1) + ((s - 3) / 4)) / d;
+      var f = (s * 10 * this.strength * (1 / (s + 1) + (s - 3) / 4)) / d;
       var df = thisNodeVector.sub(otherNodeVector);
       df.mult(f);
 
@@ -85,10 +81,10 @@ class Node {
   }
 
   drawNode() {
-    fill(255);
+    fill("#978578");
     ellipse(this.x, this.y, this.radius, this.radius);
-    fill(0);
-    ellipse(this.x, this.y, this.radius - 4, this.radius - 4);
+    fill("#36475a");
+    ellipse(this.x, this.y, this.radius - 2, this.radius - 2);
 
     //textSize(10);
     fill(255);
@@ -98,7 +94,6 @@ class Node {
 }
 
 class T1 extends Node {
-
   constructor(n, h, x, y) {
     super(n, h, x, y);
     this.radius = 100;
@@ -124,16 +119,15 @@ class T3 extends Node {
     for (let i = 0; i < linkArray.length; i++) {
       this.links.push(linkArray[i]);
     }
-    for (let i = 0; i < this.links.length; i+=2) {
-      this.curLinks.push(createA(this.links[i], this.links[i+1], '_blank'));
+    for (let i = 0; i < this.links.length; i += 2) {
+      this.curLinks.push(createA(this.links[i], this.links[i + 1], "_blank"));
     }
   }
 
   drawNode() {
-
-    fill(255);
-    ellipse(this.x, this.y, this.radius, this.radius);
-    fill(0);
+    //fill(255);
+    //ellipse(this.x, this.y, this.radius, this.radius);
+    fill("#978578");
     ellipse(this.x, this.y, this.radius - 4, this.radius - 4);
 
     //textSize(10);
@@ -146,7 +140,7 @@ class T3 extends Node {
     let textSize = spacing * numLinks;
 
     for (let j = 0; j < numLinks; j++) {
-      let tX = this.x - textSize / 2 + (j * spacing);
+      let tX = this.x - textSize / 2 + j * spacing;
       //p5.textSize(5);
       fill(255);
       for (let link of this.curLinks) {
