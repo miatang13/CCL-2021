@@ -1,10 +1,16 @@
 /* stylesheet */
 
-html, body {
+html,
+body {
   padding: 0;
   margin: 0;
 }
 
 canvas {
   vertical-align: top;
+}
+
+a {
+  color: white;
+  text-decoration: none;
 }

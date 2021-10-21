@@ -20,11 +20,10 @@ let sLength = 150;
 let sStiffness = 1;
 
 function preload() {
-  txt = loadStrings('data.txt');
+  txt = loadStrings("data.txt");
 }
 
 function setup() {
-
   //Graphics Setup
   createCanvas(windowWidth, windowHeight);
 
@@ -33,8 +32,7 @@ function setup() {
 }
 
 function draw() {
-
-  background(225);
+  background("#36475a");
 
   //repelNodes
   nodes[0].x = windowWidth / 2;
@@ -53,10 +51,15 @@ function draw() {
   }
 
   //drawSprings
-  stroke(0, 130, 164);
+  stroke("#978578");
   strokeWeight(2);
   for (let i = 0; i < springs.length; i++) {
-    line(springs[i].fromNode.x, springs[i].fromNode.y, springs[i].toNode.x, springs[i].toNode.y);
+    line(
+      springs[i].fromNode.x,
+      springs[i].fromNode.y,
+      springs[i].toNode.x,
+      springs[i].toNode.y
+    );
   }
 
   // draw nodes
@@ -67,7 +70,6 @@ function draw() {
 }
 
 function initNodesAndSprings() {
-
   //centerReference
   let cx = windowWidth / 2;
   let cy = windowHeight / 2;
@@ -89,7 +91,8 @@ function initNodesAndSprings() {
     let rx = random(-100, 100);
     let ry = random(-100, 100);
 
-    if (row[0] === "*") { //Tier 1
+    if (row[0] === "*") {
+      //Tier 1
       //node
       newNode = new T1(row, cx + rx, cy + ry);
       d1.push(newNode);
@@ -97,23 +100,33 @@ function initNodesAndSprings() {
       //spring
       let newSpring = new Spring(d0[0], newNode, sLength, sStiffness);
       springs.push(newSpring);
-
-    } else if (row[0] === "-") { //Tier 2
+    } else if (row[0] === "-") {
+      //Tier 2
       newNode = new T2(row, cx + rx, cy + ry);
       d2.push(newNode);
 
       //spring
-      let newSpring = new Spring(d1[d1.length - 1], newNode, sLength, sStiffness);
+      let newSpring = new Spring(
+        d1[d1.length - 1],
+        newNode,
+        sLength,
+        sStiffness
+      );
       springs.push(newSpring);
-
-    } else { //Tier 3
+    } else {
+      //Tier 3
       let lArr = row.split(",");
       //node
       newNode = new T3(lArr[0], cx + rx, cy + ry);
       d3.push(newNode);
 
       //spring
-      let newSpring = new Spring(d2[d2.length - 1], newNode, sLength, sStiffness);
+      let newSpring = new Spring(
+        d2[d2.length - 1],
+        newNode,
+        sLength,
+        sStiffness
+      );
       springs.push(newSpring);
 
       //links
@@ -151,7 +164,7 @@ function initNodesAndSprings() {
       totalN = d3.length;
     }
 
-    let angle = curreN / totalN * TWO_PI;
+    let angle = (curreN / totalN) * TWO_PI;
     print(angle);
 
     dx = rScale * cos(angle);
