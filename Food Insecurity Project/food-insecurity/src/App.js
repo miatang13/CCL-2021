@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { CSSTransition } from "react-transition-group";
+import Landing from "./pages/Landing";
+import Matrix from "./pages/Matrix";
+import "./styles/transition.css";
+// import { AnimatePresence } from "framer-motion";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <CSSTransition>
+          <Switch>
+            <Route exact path="/" component={Landing} />
+            <Route path="/matrix" component={Matrix} />
+          </Switch>
+        </CSSTransition>
+      </BrowserRouter>
     </div>
   );
 }
 
 export default App;
+
+/*
+
+ <Route
+          render={({ location }) => {
+            const { pathname, key } = location;
+            return (
+
+
+
+            
+ */
