@@ -1,7 +1,11 @@
 import Button from "@restart/ui/esm/Button";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { header_img_base_url, icon_img_base_url } from "../../data/baseUrls";
+import {
+  header_img_base_url,
+  icon_img_base_url,
+  story_img_base_url,
+} from "../../data/baseUrls";
 import story_data from "../../data/storyInfo.json";
 import "../../styles/story.css";
 import "../../styles/mouseMask.css";
@@ -55,6 +59,7 @@ export default function TerriPage() {
     </Container>
   ); */
 
+  var bgRef = useRef();
   var timer = useRef(0);
   var mouseX = useRef(0);
   var mouseY = useRef(0);
@@ -99,7 +104,12 @@ export default function TerriPage() {
     <div class="wrapper full-size">
       <div class="mask-bg-color full-size"></div>
       <div class="blend-multiply full-size">
-        <div class="animated-bg full-size"></div>
+        <img
+          class="bg full-size"
+          ref={bgRef}
+          src={story_img_base_url + "test.png"}
+          alt="background"
+        />
         <div class="blend-screen element-mask full-size">
           <span
             id="circle"
