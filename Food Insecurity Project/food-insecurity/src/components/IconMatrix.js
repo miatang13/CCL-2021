@@ -32,21 +32,17 @@ export default function IconMatrix(iconProp) {
 
   return (
     <>
-      <Button variant="danger" ref={target} onClick={() => setShow(!show)}>
-        Click me to see
-      </Button>
+      <img
+        ref={target}
+        onClick={() => setShow(!show)}
+        className="matrix__icon__img"
+        src={iconProp.data.img_src}
+        alt="icon"
+        delay={{ show: 700, hide: 400 }}
+      />
       <Overlay target={target.current} show={show} placement="right">
         {({ placement, arrowProps, show: _show, popper, ...props }) => (
-          <div
-            {...props}
-            style={{
-              backgroundColor: "rgba(255, 100, 100, 0.85)",
-              padding: "2px 10px",
-              color: "white",
-              borderRadius: 3,
-              ...props.style,
-            }}
-          >
+          <div {...props} className="icon__info">
             <span>{iconProp.data.name} </span>
             <span>{iconProp.data.location} </span>
             <p> {iconProp.data.blurb} </p>
