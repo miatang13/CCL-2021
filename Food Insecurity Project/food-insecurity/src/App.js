@@ -1,9 +1,9 @@
 import "./App.css";
+import "./styles/transition.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import Landing from "./pages/Landing";
 import Matrix from "./pages/Matrix";
-import "./styles/transition.css";
 // import { AnimatePresence } from "framer-motion";
 
 function App() {

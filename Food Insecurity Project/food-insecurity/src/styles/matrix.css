@@ -17,3 +17,11 @@
   font-weight: 800;
   font-size: 1.5vw;
 }
+
+#matrix__container {
+  background-color: #121212;
+}
+
+hr {
+  border: 1px solid white;
+}

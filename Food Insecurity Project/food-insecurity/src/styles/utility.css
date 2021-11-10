@@ -1,0 +1,30 @@
+.min-vh-100 {
+  min-height: 100vh;
+}
+
+/* These are not exactly 40 and 10 per say to leave some room */
+
+.min-vh-40 {
+  min-height: 38vh;
+}
+
+.min-vh-10 {
+  min-height: 8vh;
+}
+
+.vline {
+  border-left: 0.5px solid rgba(255, 255, 255, 0.438);
+  height: 80vh;
+  margin-left: 50%;
+  margin-top: 10vh;
+  position: absolute;
+}
+
+.bottom__align {
+  position: relative;
+}
+
+#bottom__align__content {
+  position: absolute;
+  bottom: 0;
+}

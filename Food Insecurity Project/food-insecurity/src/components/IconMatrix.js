@@ -4,7 +4,6 @@ import { useRef, useState } from "react";
 import { OverlayTrigger } from "react-bootstrap";
 
 export default function IconMatrix(iconProp) {
-  console.log(iconProp);
   const [show, setShow] = useState(false);
   const target = useRef(null);
   return (

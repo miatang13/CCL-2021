@@ -1,13 +1,13 @@
-import icon_data from "../data/iconInfo.json";
+import { Col } from "react-bootstrap";
 import IconMatrix from "./IconMatrix";
 
-export default function MatrixQuadrant() {
+export default function MatrixQuadrant(props) {
   const baseUrl = "/assets/img/matrixIcon/";
 
   return (
-    <div>
-      <p> Matrix Component </p>
-      {icon_data.map((indivData, i) => (
+    <Col id={"matrix__quadrant__" + props.quad_idx}>
+      <p> Matrix Quadrant {props.quad_idx}</p>
+      {props.data.map((indivData, i) => (
         <IconMatrix
           name={indivData.name}
           location={indivData.location}
@@ -16,6 +16,6 @@ export default function MatrixQuadrant() {
           key={i}
         />
       ))}
-    </div>
+    </Col>
   );
 }
