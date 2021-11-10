@@ -70,27 +70,30 @@ export default function TerriPage() {
   }
 
   useEffect(() => {
-    document.addEventListener("mousemove", function (e) {
-      // if mouse start moving add class moving
-      // it will show the circle with opacity transition
+    function onMouseMove(e) {
       setMoving(true);
-      // get the mouse position minus 160px to center the circle
       mouseX.current = e.pageX - 160;
       mouseY.current = e.pageY - 160;
-      // if mouse stop moving clear timer and call mouseStopped function
       clearTimeout(timer.current);
       timer.current = setTimeout(mouseStopped, 3000);
-    });
+    }
+
+    document.addEventListener("mousemove", onMouseMove);
 
     // set the momentum with setInterval function
-    var loop = setInterval(function () {
-      // change 12 to alter damping higher is slower
-      xp.current += (mouseX.current - xp.current) / 6;
-      yp.current += (mouseY.current - yp.current) / 6;
+    const interval = setInterval(function () {
+      const damp = 10;
+      xp.current += (mouseX.current - xp.current) / damp;
+      yp.current += (mouseY.current - yp.current) / damp;
       circleRef.current.style.left = xp.current + "px";
       circleRef.current.style.top = yp.current + "px";
     }, 30);
-  });
+
+    return () => {
+      document.removeEventListener("mousemove", onMouseMove);
+      clearInterval(interval);
+    };
+  }, []);
 
   return (
     <div class="wrapper full-size">
