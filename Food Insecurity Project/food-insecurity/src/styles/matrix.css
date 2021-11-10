@@ -5,10 +5,15 @@
 
 .icon__info {
   color: white;
-  font-size: 1vw;
   width: 20%;
+  padding-left: 1vw;
+}
+
+.icon__info p {
+  font-size: 1vw;
 }
 
 .icon__info span {
   font-weight: 800;
+  font-size: 1.5vw;
 }
