@@ -1,0 +1,29 @@
+.story__container {
+  text-align: left;
+
+  color: black;
+}
+
+.content__container {
+  padding: 5vw;
+  padding-left: 8vw;
+  padding-right: 8vw;
+  background-color: white;
+}
+
+.data__text {
+  color: gray;
+  font-size: 1.5vw;
+}
+
+section {
+  border-top: 1px solid black;
+}
+
+.header__img__container {
+  padding: 5vw;
+}
+
+h2 {
+  font-size: 1.5vw;
+}
