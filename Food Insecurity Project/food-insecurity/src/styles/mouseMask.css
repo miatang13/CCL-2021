@@ -1,0 +1,62 @@
+.full-size {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.blend-multiply {
+  mix-blend-mode: multiply;
+}
+.blend-screen {
+  mix-blend-mode: screen;
+}
+
+.mask-bg-color {
+  background-color: #ffffff;
+}
+.animated-bg {
+  background-image: url("https://www.akc.org/wp-content/uploads/2017/11/Pembroke-Welsh-Corgi-standing-outdoors-in-the-fall.jpg");
+  background-position: center;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.element-mask {
+  background-color: rgb(182, 182, 182);
+}
+
+.circle-follow {
+  position: absolute;
+  overflow: hidden;
+  background-color: #000000;
+  width: 320px;
+  height: 320px;
+  top: calc(50% - 160px);
+  left: calc(50% - 160px);
+  -webkit-border-radius: 160px;
+  border-radius: 160px;
+  -webkit-transition: opacity 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);
+  transition: opacity 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);
+  opacity: 0;
+}
+
+.circle-follow.moving {
+  opacity: 1;
+}
+
+/* hack to detect ie11 and above - blend mode not supported */
+_:-ms-fullscreen,
+:root .letter-mask {
+  background-color: transparent;
+}
+_:-ms-fullscreen,
+:root .animated-bg {
+  opacity: 0.2;
+}
+_:-ms-fullscreen,
+:root .circle-follow {
+  background-color: #ffffff;
+  opacity: 0.2;
+}

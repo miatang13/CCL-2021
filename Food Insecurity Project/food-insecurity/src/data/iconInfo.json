@@ -1,30 +1,34 @@
-[
-  {
+{
+  "0_1": {
     "name": "Terri",
     "location": "Phoenix, AZ",
     "blurb": "Terri's great life suddenly vanished when her job disappeared and she needed help from the food pantry at her local church. Now that she's back on her feet, she's a regular volunteer at the pantry that helped stabilize her life.",
     "img_src": "test1.png",
-    "quad_idx": 0
+    "row_idx": 0,
+    "col_idx": 1
   },
-  {
+  "1_2": {
     "name": "Iker",
     "location": "Phoenix, AZ",
     "blurb": "Terri's great life suddenly vanished when her job disappeared and she needed help from the food pantry at her local church. Now that she's back on her feet, she's a regular volunteer at the pantry that helped stabilize her life.",
     "img_src": "test.png",
-    "quad_idx": 2
+    "row_idx": 1,
+    "col_idx": 2
   },
-  {
+  "5_4": {
     "name": "Terri",
     "location": "Phoenix, AZ",
     "blurb": "Terri's great life suddenly vanished when her job disappeared and she needed help from the food pantry at her local church. Now that she's back on her feet, she's a regular volunteer at the pantry that helped stabilize her life.",
     "img_src": "test1.png",
-    "quad_idx": 1
+    "row_idx": 5,
+    "col_idx": 4
   },
-  {
+  "3_6": {
     "name": "Iker",
     "location": "Phoenix, AZ",
     "blurb": "Terri's great life suddenly vanished when her job disappeared and she needed help from the food pantry at her local church. Now that she's back on her feet, she's a regular volunteer at the pantry that helped stabilize her life.",
     "img_src": "test1.png",
-    "quad_idx": 3
+    "row_idx": 4,
+    "col_idx": 6
   }
-]
+}
