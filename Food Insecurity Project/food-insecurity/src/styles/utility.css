@@ -12,6 +12,10 @@
   min-height: 8vh;
 }
 
+.min-vh-grid-cell {
+  min-height: 13vh;
+}
+
 .vline {
   border-left: 0.5px solid rgba(255, 255, 255, 0.438);
   height: 80vh;
