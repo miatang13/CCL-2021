@@ -3,25 +3,25 @@
   border-radius: 50%;
 }
 
-.icon__info {
-  color: white;
-  width: 20%;
-  padding-left: 1vw;
-}
-
-.icon__info p {
-  font-size: 1vw;
-}
-
-.icon__info span {
-  font-weight: 800;
-  font-size: 1.5vw;
-}
-
 #matrix__container {
   background-color: #121212;
 }
 
 hr {
   border: 1px solid white;
+}
+
+#center__text__container {
+  position: absolute;
+  margin-top: 40vh;
+  margin-left: 40vw;
+
+  color: white;
+  width: 20%;
+
+  background-color: #121212;
+}
+
+#center__text__container p {
+  font-size: 1vw;
 }
