@@ -44,3 +44,7 @@ h2 {
 Link {
   position: absolute;
 }
+
+.navigation__wrapper {
+  position: absolute;
+}

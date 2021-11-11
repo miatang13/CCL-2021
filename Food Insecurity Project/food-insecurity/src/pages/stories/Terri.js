@@ -57,11 +57,7 @@ export default function TerriPage() {
 
   return (
     <div>
-      <Link to="/matrix">
-        {" "}
-        <Button>Back to matrix </Button>
-      </Link>
-      <div class="wrapper">
+      <div class="mask-wrapper">
         <div class="mask-bg-color full-size"></div>
         <div class="blend-multiply full-size">
           <img
@@ -84,6 +80,12 @@ export default function TerriPage() {
           <h1> {data.name} </h1>
           <p> {contentText}</p>
         </div>
+      </div>
+
+      <div class="navigation__wrapper">
+        <Link to="/matrix">
+          <Button>Back to matrix </Button>
+        </Link>
       </div>
     </div>
   );
