@@ -6,6 +6,8 @@ import IconMatrix from "../components/IconMatrix";
 import { icon_img_base_url } from "../data/baseUrls";
 import description_data from "../data/description.json";
 import { useState } from "react";
+import AnimateOnChange from "react-animate-on-change";
+import "../styles/animateOnChange.css";
 
 export default function Matrix() {
   const num_cols = 8;
@@ -84,7 +86,14 @@ export default function Matrix() {
 
   return (
     <div className="min-vh-100" id="matrix__container">
-      {Description()}
+      <AnimateOnChange
+        baseClassName="Score"
+        animationClassName="Score--bounce"
+        animate={hoverKey !== "na"}
+      >
+        {Description()}
+      </AnimateOnChange>
+
       <div className="vline" id="y__axis"></div>
       <Container fluid className="min-vh-100">
         <Row className="min-vh-10 bottom__align">
