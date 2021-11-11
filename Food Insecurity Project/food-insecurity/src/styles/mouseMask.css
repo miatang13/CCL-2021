@@ -25,12 +25,14 @@
 }
 .element-mask {
   background-color: rgb(182, 182, 182);
+  backdrop-filter: blur(6px);
 }
 
 .circle-follow {
   position: absolute;
   overflow: hidden;
   background-color: #000000;
+  backdrop-filter: blur(0);
   width: 320px;
   height: 320px;
   top: calc(50% - 160px);
