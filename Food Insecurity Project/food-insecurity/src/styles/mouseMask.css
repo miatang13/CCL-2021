@@ -25,6 +25,7 @@
 }
 .element-mask {
   background-color: rgb(182, 182, 182);
+  pointer-events: none;
 }
 
 .circle-follow {

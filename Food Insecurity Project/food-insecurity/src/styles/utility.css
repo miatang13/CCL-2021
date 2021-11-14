@@ -16,6 +16,10 @@
   min-height: 13vh;
 }
 
+.min-vh-story-number-cell {
+  min-height: 12.5vh;
+}
+
 .vline {
   border-left: 0.5px solid rgba(255, 255, 255, 0.438);
   height: 80vh;
@@ -31,4 +35,20 @@
 #bottom__align__content {
   position: absolute;
   bottom: 0;
+}
+
+.center__container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+.absolute__pos {
+  position: absolute;
+}
+
+a {
+  text-decoration: none;
 }
