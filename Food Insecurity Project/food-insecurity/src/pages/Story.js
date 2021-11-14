@@ -23,6 +23,10 @@ export default function StoryPage({ match }) {
    * Data UI
    */
 
+  const handleHoverOverNumber = (idx) => {
+    setContentText(interactive_content[idx].description);
+  };
+
   useEffect(() => {
     let spansJsx = [];
     const maxCol = 6;
@@ -32,7 +36,7 @@ export default function StoryPage({ match }) {
       let elem = (
         <div
           className="hidden__num__wrapper"
-          onMouseOver={() => console.log("hi", c.number)}
+          onMouseOver={() => handleHoverOverNumber(index)}
         >
           {c.number} %
         </div>
