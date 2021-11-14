@@ -6,6 +6,8 @@ import { useEffect, useRef, useState } from "react";
 import classNames from "classnames";
 import "../styles/story.css";
 import "../styles/mouseMask.css";
+import { Col, Container, Row } from "react-bootstrap";
+import { getRandomInt } from "../utility/random";
 
 export default function StoryPage({ match }) {
   const {
@@ -13,7 +15,35 @@ export default function StoryPage({ match }) {
   } = match;
 
   const data = story_data[personName];
+  const interactive_content = data.interactive_content;
   const [contentText, setContentText] = useState(data.bio);
+  const [hiddenNumbersJsx, setHiddenNumberJsx] = useState([]);
+
+  /**
+   * Data UI
+   */
+
+  useEffect(() => {
+    let spansJsx = [];
+    const maxCol = 6;
+
+    interactive_content.forEach((c, index) => {
+      let elem = <span> {c.number} % </span>;
+      let colIdx = getRandomInt(maxCol);
+      let columns = [];
+      for (let i = 0; i < maxCol; i++) {
+        if (colIdx === i) {
+          columns.push(<Col> {elem} </Col>);
+        } else {
+          columns.push(<Col></Col>);
+        }
+      }
+      let wrapper = <Row> {columns} </Row>;
+      spansJsx.push(wrapper);
+    });
+    let jsx = <Container> {spansJsx} </Container>;
+    setHiddenNumberJsx(jsx);
+  }, []);
 
   /**
    * Interaction
@@ -67,6 +97,8 @@ export default function StoryPage({ match }) {
             src={story_img_base_url + personName + story_img_format}
             alt="background"
           />
+          <div class="blend-screen">{hiddenNumbersJsx}</div>
+
           <div class="blend-screen element-mask full-size">
             <span
               id="circle"
@@ -76,16 +108,18 @@ export default function StoryPage({ match }) {
           </div>
         </div>
       </div>
+
       <div id="content__container">
         <div id="content__text">
-          <h1> {personName} </h1>
+          <h4> {personName} </h4>
+          <h4> {data.location} </h4>
           <p> {contentText}</p>
         </div>
       </div>
 
       <div class="navigation__wrapper">
         <Link to="/matrix">
-          <Button>Back to matrix </Button>
+          <Button>Return to matrix </Button>
         </Link>
       </div>
     </div>

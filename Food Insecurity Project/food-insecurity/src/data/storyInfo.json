@@ -1,14 +1,35 @@
 {
   "Hullamatou": {
+    "location": "Bronx, New York",
     "bio": "A mother of nine, Hullamatou Ceesay, 31, returns with two of her daughters from a visit to Part of the Solution, a Bronx food pantry. Bags of cereal, pasta, bread, and canned foods will last the family three days. When those supplies run out, they will rely on stores that offer food on credit and on neighbors willing to share. When her children as for food she doesn't have, Ceesay says, “I get sad.”"
   },
   "Kristin": {
+    "location": "Charles City, Iowa",
     "bio": " Kristin Hahn and her grandmother, Janet Groven, visit a weekly soup kitchen in Charles City, Iowa. “By the end of the month we have nothing.” says Groven, who also depends on a food pantry to feed her family. Of America's 48 million 'food insecure' more than half are white, and more than half live outside cities"
   },
   "Amy": {
+    "location": "Pittsburgh, Pennsylvania",
     "bio": "Amy is living with her daughter and has never used food assistance before. Amy is fighting a rare type of cancer and because of COVID-19 her daughter is unable to work. “We ran out of money because my daughter was working at the hospital and she had to stop because I have cancer and she worked at the hospital. She’s my caregiver so we had to find some food and they directed us down here.”"
   },
   "Terri": {
-    "bio": "Originally from Philadelphia, Terri moved to Florida after her mother, who she was caring for, passed away. She left with the promise of a job -but it fell through. After multiple job opportunities fell through, Terri was left with very little savings and found herself in an unfamiliar position. “I never thought of myself as someone who needed to visit a food pantry,” she said. “But not knowing if you’re going to eat is probably the worst feeling I’ve ever dealt with.”"
+    "location": "Brandenton, Florida",
+    "bio": "Originally from Philadelphia, Terri moved to Florida after her mother, who she was caring for, passed away. She left with the promise of a job -but it fell through. After multiple job opportunities fell through, Terri was left with very little savings and found herself in an unfamiliar position. “I never thought of myself as someone who needed to visit a food pantry,” she said. “But not knowing if you’re going to eat is probably the worst feeling I’ve ever dealt with.”",
+    "interactive_content": [
+      {
+        "description": "4% of people with a bachelors degree or higher live in poverty.",
+        "number": 4,
+        "source": "https://www.census.gov/library/visualizations/2016/comm/cb16-193_food_security.html"
+      },
+      {
+        "description": "In Florida, 60% of those laid off from work due to the coronavirus pandemic suffer from food insecurity.",
+        "number": 60,
+        "source": "https://www.census.gov/programs-surveys/household-pulse-survey/data.html"
+      },
+      {
+        "description": "Approximately 30% of people who are food insecure do not qualify for federal food assistance programs.",
+        "number": 30,
+        "source": "https://www.census.gov/programs-surveys/household-pulse-survey/data.html"
+      }
+    ]
   }
 }
