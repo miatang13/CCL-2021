@@ -2,7 +2,6 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 
 export default function IconMatrix(iconProp) {
-  const storyBaseUrl = "/stories/";
   const target = useRef(null);
   return (
     <>

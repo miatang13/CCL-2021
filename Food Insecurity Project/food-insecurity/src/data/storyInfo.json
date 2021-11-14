@@ -1,14 +1,14 @@
 {
+  "Hullamatou": {
+    "bio": "A mother of nine, Hullamatou Ceesay, 31, returns with two of her daughters from a visit to Part of the Solution, a Bronx food pantry. Bags of cereal, pasta, bread, and canned foods will last the family three days. When those supplies run out, they will rely on stores that offer food on credit and on neighbors willing to share. When her children as for food she doesn't have, Ceesay says, “I get sad.”"
+  },
+  "Kristin": {
+    "bio": " Kristin Hahn and her grandmother, Janet Groven, visit a weekly soup kitchen in Charles City, Iowa. “By the end of the month we have nothing.” says Groven, who also depends on a food pantry to feed her family. Of America's 48 million 'food insecure' more than half are white, and more than half live outside cities"
+  },
+  "Amy": {
+    "bio": "Amy is living with her daughter and has never used food assistance before. Amy is fighting a rare type of cancer and because of COVID-19 her daughter is unable to work. “We ran out of money because my daughter was working at the hospital and she had to stop because I have cancer and she worked at the hospital. She’s my caregiver so we had to find some food and they directed us down here.”"
+  },
   "Terri": {
-    "name": "Terri",
-    "header_img_url": "test.png",
-    "icon_img_url": "test1.png",
-    "intro": "Terri's great life suddenly vanished when her job disappeared and she needed help from the food pantry at her local church. Now that she's back on her feet, she's a regular volunteer at the pantry that helped stabilize her life.",
-    "content": [
-      {
-        "data_content": " In the United States, 3% of those who hold a Bachelor’s degree or higher suffer from food insecurity.",
-        "narrative_content": "When I came here, I never ever thought I would be in the position of needing help. I hold two master’s degrees, I’m well spoken — I never thought that I would be totally broke. When you look in the refrigerator and there’s nothing there, for me, it was very shameful because I should have never gotten here."
-      }
-    ]
+    "bio": "Originally from Philadelphia, Terri moved to Florida after her mother, who she was caring for, passed away. She left with the promise of a job -but it fell through. After multiple job opportunities fell through, Terri was left with very little savings and found herself in an unfamiliar position. “I never thought of myself as someone who needed to visit a food pantry,” she said. “But not knowing if you’re going to eat is probably the worst feeling I’ve ever dealt with.”"
   }
 }

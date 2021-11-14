@@ -5,8 +5,6 @@ import { CSSTransition } from "react-transition-group";
 import Landing from "./pages/Landing";
 import Matrix from "./pages/Matrix";
 import StoryPage from "./pages/Story";
-import TerriPage from "./pages/stories/Terri";
-import IkerPage from "./pages/stories/Iker";
 // import { AnimatePresence } from "framer-motion";
 
 function App() {
