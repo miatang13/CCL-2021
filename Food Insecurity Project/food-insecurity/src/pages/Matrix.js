@@ -11,7 +11,9 @@ export default function Matrix() {
   const num_cols = 8;
   const num_rows = 7;
   const horizontal_line_row_idx = 3;
-  const [hoverKey, setHover] = useState("na");
+  const [iconName, setName] = useState("");
+  const [iconLocation, setLocation] = useState("");
+  const [iconBlurb, setBlurb] = useState("");
 
   var matrixContent = [];
   for (let row = 0; row < num_rows; row++) {
@@ -37,8 +39,10 @@ export default function Matrix() {
       for (let col = 0; col < num_cols; col++) {
         let dataKey = row.toString() + "_" + col.toString();
         // has icon in this cell
-        if (icon_data[dataKey]) {
-          let data = icon_data[dataKey];
+        let data = icon_data.find(
+          (d) => d.row_idx === row && d.col_idx === col
+        );
+        if (data) {
           let iconElem = (
             <IconMatrix
               name={data.name}
@@ -47,10 +51,14 @@ export default function Matrix() {
               blurb={data.blurb}
               key={dataKey}
               onMouseEnter={() => {
-                setHover(dataKey);
+                setName(data.name);
+                setLocation(data.location);
+                setBlurb(data.blurb);
               }}
               onMouseLeave={() => {
-                setHover("na");
+                setName("");
+                setLocation("");
+                setBlurb("");
               }}
             />
           );
@@ -65,12 +73,12 @@ export default function Matrix() {
   }
 
   function Description() {
-    if (hoverKey !== "na") {
+    if (iconName !== "") {
       return (
         <div id="center__text__container">
-          <span>{icon_data[hoverKey].name} </span>
-          <span>{icon_data[hoverKey].location} </span>
-          <p> {icon_data[hoverKey].blurb} </p>
+          <span> {iconName} </span>
+          <span> {iconLocation} </span>
+          <p> {iconBlurb} </p>
         </div>
       );
     } else {

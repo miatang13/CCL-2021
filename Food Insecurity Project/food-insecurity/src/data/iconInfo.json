@@ -1,34 +1,18 @@
-{
-  "0_1": {
-    "name": "Terri",
-    "location": "Phoenix, AZ",
-    "blurb": "Terri's great life suddenly vanished when her job disappeared and she needed help from the food pantry at her local church. Now that she's back on her feet, she's a regular volunteer at the pantry that helped stabilize her life.",
-    "img_src": "test1.png",
-    "row_idx": 0,
-    "col_idx": 1
-  },
-  "1_2": {
-    "name": "Iker",
-    "location": "Phoenix, AZ",
-    "blurb": "Terri's great life suddenly vanished when her job disappeared and she needed help from the food pantry at her local church. Now that she's back on her feet, she's a regular volunteer at the pantry that helped stabilize her life.",
-    "img_src": "test.png",
+[
+  {
+    "name": "Hullamatou Ceesay",
+    "location": "Bronx, New York",
+    "blurb": "Most of America's hungry are native-born, but new immigrants like Hullamatou Ceesay from Gambia struggle too, taking meals wherever they can find them.",
+    "img_src": "Ceesay.png",
     "row_idx": 1,
-    "col_idx": 2
-  },
-  "5_4": {
-    "name": "Terri",
-    "location": "Phoenix, AZ",
-    "blurb": "Terri's great life suddenly vanished when her job disappeared and she needed help from the food pantry at her local church. Now that she's back on her feet, she's a regular volunteer at the pantry that helped stabilize her life.",
-    "img_src": "test1.png",
-    "row_idx": 5,
     "col_idx": 4
   },
-  "3_6": {
-    "name": "Iker",
-    "location": "Phoenix, AZ",
-    "blurb": "Terri's great life suddenly vanished when her job disappeared and she needed help from the food pantry at her local church. Now that she's back on her feet, she's a regular volunteer at the pantry that helped stabilize her life.",
-    "img_src": "test1.png",
-    "row_idx": 4,
+  {
+    "name": "Kristin Hahn",
+    "location": "Charles City, Iowa",
+    "blurb": "Kristin Hahn and her grandmother, Janet Groven, visit a weekly soup kitchen in Charles City, Iowa. 'By the end of the month we have nothing.'",
+    "img_src": "Hahn.png",
+    "row_idx": 0,
     "col_idx": 6
   }
-}
+]
