@@ -16,17 +16,20 @@
     "bio": "Originally from Philadelphia, Terri moved to Florida after her mother, who she was caring for, passed away. She left with the promise of a job -but it fell through. After multiple job opportunities fell through, Terri was left with very little savings and found herself in an unfamiliar position. “I never thought of myself as someone who needed to visit a food pantry,” she said. “But not knowing if you’re going to eat is probably the worst feeling I’ve ever dealt with.”",
     "interactive_content": [
       {
-        "description": "4% of people with a bachelors degree or higher live in poverty.",
+        "data": "4% of people with a bachelors degree or higher live in poverty.",
+        "story_blurb": "“When I came here, I never ever thought I would be in the position of needing help. I hold two master’s degrees, I’m well spoken — I never thought that I would be totally broke. When you look in the refrigerator and there’s nothing there, for me, it was very shameful because I should have never gotten here.”",
         "number": 4,
         "source": "https://www.census.gov/library/visualizations/2016/comm/cb16-193_food_security.html"
       },
       {
-        "description": "In Florida, 60% of those laid off from work due to the coronavirus pandemic suffer from food insecurity.",
+        "data": "In Florida, 60% of those laid off from work due to the coronavirus pandemic suffer from food insecurity.",
+        "story_blurb": "“When I came here, I never ever thought I would be in the position of needing help. I hold two master’s degrees, I’m well spoken — I never thought that I would be totally broke. When you look in the refrigerator and there’s nothing there, for me, it was very shameful because I should have never gotten here.”",
         "number": 60,
         "source": "https://www.census.gov/programs-surveys/household-pulse-survey/data.html"
       },
       {
-        "description": "Approximately 30% of people who are food insecure do not qualify for federal food assistance programs.",
+        "data": "Approximately 30% of people who are food insecure do not qualify for federal food assistance programs.",
+        "story_blurb": "“When I came here, I never ever thought I would be in the position of needing help. I hold two master’s degrees, I’m well spoken — I never thought that I would be totally broke. When you look in the refrigerator and there’s nothing there, for me, it was very shameful because I should have never gotten here.”",
         "number": 30,
         "source": "https://www.census.gov/programs-surveys/household-pulse-survey/data.html"
       }

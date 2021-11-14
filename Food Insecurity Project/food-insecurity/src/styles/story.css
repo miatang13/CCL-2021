@@ -28,17 +28,12 @@ h2 {
   font-size: 1.5vw;
 }
 
-#content__text {
-  color: black;
-  text-align: left;
-  width: 50%;
-  font-size: 0.8vw;
-}
-
 #content__container {
   position: absolute;
   margin-left: 10vw;
-  margin-top: 70vh;
+  margin-top: 50vh;
+  text-align: left;
+  width: 25%;
 }
 
 Link {

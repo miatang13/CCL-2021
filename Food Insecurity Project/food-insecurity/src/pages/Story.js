@@ -16,24 +16,25 @@ export default function StoryPage({ match }) {
 
   const data = story_data[personName];
   const interactive_content = data.interactive_content;
-  const [contentText, setContentText] = useState(
-    interactive_content[0].description
-  );
+  const [header, setHeader] = useState(personName);
+  const [subheader, setSubheader] = useState(data.location);
+  const [paragraph, setContentText] = useState(data.bio);
   const [hiddenNumbersJsx, setHiddenNumberJsx] = useState([]);
-  const [hiddenNumberShow, setHiddenNumberShow] = useState(false);
 
   /**
    * Data UI
    */
 
   const handleHoverOverNumber = (idx) => {
-    setContentText(interactive_content[idx].description);
-    setHiddenNumberShow(true);
+    setHeader(interactive_content[idx].data);
+    setSubheader("BEHIND THE NUMBERS");
+    setContentText(interactive_content[idx].story_blurb);
   };
 
   const handleLeaveNumber = () => {
+    setHeader(personName);
+    setSubheader(data.location);
     setContentText(data.bio);
-    setHiddenNumberShow(false);
   };
 
   useEffect(() => {
@@ -64,10 +65,11 @@ export default function StoryPage({ match }) {
         <Row className="min-vh-story-number-cell "> {columns} </Row>
       );
       spansJsx.push(wrapper);
+      spansJsx.push(<Row className="min-vh-story-number-cell "> </Row>); // for padding on bottom
     });
 
     spansJsx.push(<Row className="min-vh-story-number-cell "> </Row>); // for padding on bottom
-    spansJsx.push(<Row className="min-vh-story-number-cell "> </Row>); // for padding on bottom
+    console.log(spansJsx.length);
     let jsx = (
       <Container className="min-vh-100 min-vw-100"> {spansJsx} </Container>
     );
@@ -139,16 +141,10 @@ export default function StoryPage({ match }) {
       </div>
 
       <div id="content__container">
-        <div id="content__text">
-          {!hiddenNumberShow && (
-            <div>
-              <h4> {personName} </h4>
-              <h4> {data.location} </h4>
-            </div>
-          )}
+        <h4> {header}</h4>
+        <h4> {subheader}</h4>
 
-          <span> {contentText}</span>
-        </div>
+        <span> {paragraph}</span>
       </div>
 
       <div class="navigation__wrapper">
