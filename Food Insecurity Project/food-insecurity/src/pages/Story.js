@@ -32,7 +32,7 @@ export default function StoryPage({ match }) {
       let elem = (
         <div
           className="hidden__num__wrapper"
-          onMouseEnter={() => console.log("hi", c.number)}
+          onMouseOver={() => console.log("hi", c.number)}
         >
           {c.number} %
         </div>
