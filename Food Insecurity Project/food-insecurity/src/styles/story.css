@@ -48,3 +48,8 @@ Link {
 .navigation__wrapper {
   position: absolute;
 }
+
+.hidden__num__wrapper {
+  color: white;
+  font-size: 5vw;
+}

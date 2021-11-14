@@ -26,9 +26,17 @@ export default function StoryPage({ match }) {
   useEffect(() => {
     let spansJsx = [];
     const maxCol = 6;
+    spansJsx.push(<Row className="min-vh-story-number-cell "> </Row>); // for padding on top
 
     interactive_content.forEach((c, index) => {
-      let elem = <span> {c.number} % </span>;
+      let elem = (
+        <div
+          className="hidden__num__wrapper"
+          onMouseEnter={() => console.log("hi", c.number)}
+        >
+          {c.number} %
+        </div>
+      );
       let colIdx = getRandomInt(maxCol);
       let columns = [];
       for (let i = 0; i < maxCol; i++) {
@@ -38,10 +46,14 @@ export default function StoryPage({ match }) {
           columns.push(<Col></Col>);
         }
       }
-      let wrapper = <Row> {columns} </Row>;
+      let wrapper = (
+        <Row className="min-vh-story-number-cell "> {columns} </Row>
+      );
       spansJsx.push(wrapper);
     });
-    let jsx = <Container> {spansJsx} </Container>;
+
+    spansJsx.push(<Row className="min-vh-story-number-cell "> </Row>); // for padding on bottom
+    let jsx = <Container className="min-vh-100"> {spansJsx} </Container>;
     setHiddenNumberJsx(jsx);
   }, []);
 
