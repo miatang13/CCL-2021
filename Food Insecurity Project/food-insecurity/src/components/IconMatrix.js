@@ -6,7 +6,7 @@ export default function IconMatrix(iconProp) {
   const target = useRef(null);
   return (
     <>
-      <Link to={storyBaseUrl + iconProp.name}>
+      <Link to={`/stories/${iconProp.name}`}>
         <img
           ref={target}
           className="matrix__icon__img"
