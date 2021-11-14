@@ -45,10 +45,8 @@ export default function Matrix() {
         if (data) {
           let iconElem = (
             <IconMatrix
-              name={data.name}
-              location={data.location}
+              name={data.first_name}
               img_src={icon_img_base_url + data.first_name + icon_img_format}
-              blurb={data.blurb}
               key={dataKey}
               onMouseEnter={() => {
                 setName(data.first_name);

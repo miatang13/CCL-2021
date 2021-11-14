@@ -1,18 +1,19 @@
 import Button from "@restart/ui/esm/Button";
 import { Link } from "react-router-dom";
-import { story_img_base_url } from "../../data/baseUrls";
-import story_data from "../../data/storyInfo.json";
+import { story_img_base_url, story_img_format } from "../data/baseUrls";
+import story_data from "../data/storyInfo.json";
 import { useEffect, useRef, useState } from "react";
 import classNames from "classnames";
-import "../../styles/story.css";
-import "../../styles/mouseMask.css";
+import "../styles/story.css";
+import "../styles/mouseMask.css";
 
-export default function TerriPage() {
-  /**
-   * Data
-   */
-  const data = story_data["Terri"];
-  const [contentText, setContentText] = useState(data.intro);
+export default function StoryPage({ match }) {
+  const {
+    params: { personName },
+  } = match;
+
+  const data = story_data[personName];
+  const [contentText, setContentText] = useState(data.bio);
 
   /**
    * Interaction
@@ -63,7 +64,7 @@ export default function TerriPage() {
           <img
             class="bg full-size"
             ref={bgRef}
-            src={story_img_base_url + "test.png"}
+            src={story_img_base_url + personName + story_img_format}
             alt="background"
           />
           <div class="blend-screen element-mask full-size">
@@ -77,7 +78,7 @@ export default function TerriPage() {
       </div>
       <div id="content__container">
         <div id="content__text">
-          <h1> {data.name} </h1>
+          <h1> {personName} </h1>
           <p> {contentText}</p>
         </div>
       </div>
@@ -90,5 +91,3 @@ export default function TerriPage() {
     </div>
   );
 }
-
-//https://codepen.io/miatang13/pen/vYJamKW
