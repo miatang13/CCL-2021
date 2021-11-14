@@ -75,7 +75,6 @@ export default function LandingGraphs() {
       onMouseDown={handleDown}
       onMouseUp={handleUp}
       onMouseMove={handleAddCircle}
-      id="matter__js__wrapper"
     >
       <div ref={scene} style={{ width: "100%", height: "100%" }} />
     </div>
