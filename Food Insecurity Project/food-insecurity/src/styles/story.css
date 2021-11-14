@@ -30,21 +30,39 @@ h2 {
 
 #content__container {
   position: absolute;
-  margin-left: 10vw;
-  margin-top: 50vh;
+  margin-left: 5vw;
+  margin-top: 60vh;
   text-align: left;
-  width: 25%;
+  width: 27%;
+}
+
+#content__container #header {
+  font-size: 1vw;
+  font-weight: 800;
+  margin-bottom: 2vw;
+}
+
+#content__container #subheader {
+  font-size: 1vw;
+  font-weight: 500;
+  margin-bottom: 0.5vw;
+}
+
+#content__container #paragraph {
+  font-size: 1vw;
 }
 
 Link {
   position: absolute;
 }
 
-.navigation__wrapper {
-  position: absolute;
-}
-
 .hidden__num__wrapper {
   color: white;
   font-size: 5vw;
+}
+
+#nav__btn {
+  color: white;
+  font-size: 1.5vw;
+  font-style: italic;
 }

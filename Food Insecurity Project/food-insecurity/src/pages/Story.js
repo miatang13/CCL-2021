@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import classNames from "classnames";
 import "../styles/story.css";
 import "../styles/mouseMask.css";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Nav, Navbar, Row } from "react-bootstrap";
 import { getRandomInt } from "../utility/random";
 
 export default function StoryPage({ match }) {
@@ -40,6 +40,7 @@ export default function StoryPage({ match }) {
   useEffect(() => {
     let spansJsx = [];
     const maxCol = 6;
+    const numRow = 8;
     spansJsx.push(<Row className="min-vh-story-number-cell"> </Row>); // for padding on top
 
     interactive_content.forEach((c, index) => {
@@ -52,7 +53,8 @@ export default function StoryPage({ match }) {
           {c.number} %
         </div>
       );
-      let colIdx = getRandomInt(maxCol);
+      let min = index >= numRow / 2 ? maxCol / 2 : 0;
+      let colIdx = Math.max(min, getRandomInt(maxCol));
       let columns = [];
       for (let i = 0; i < maxCol; i++) {
         if (colIdx === i) {
@@ -141,17 +143,21 @@ export default function StoryPage({ match }) {
       </div>
 
       <div id="content__container">
-        <h4> {header}</h4>
-        <h4> {subheader}</h4>
-
-        <span> {paragraph}</span>
+        <h4 id="header"> {header}</h4>
+        <h4 id="subheader"> {subheader}</h4>
+        <span id="paragraph"> {paragraph}</span>
       </div>
 
-      <div class="navigation__wrapper">
+      <Navbar class="absolute__pos">
         <Link to="/matrix">
-          <Button>Return to matrix </Button>
+          <Nav>
+            <Nav.Link id="nav__btn" href="/matrix">
+              {" "}
+              Return to matrix
+            </Nav.Link>
+          </Nav>
         </Link>
-      </div>
+      </Navbar>
     </div>
   );
 }

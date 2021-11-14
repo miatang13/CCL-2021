@@ -45,3 +45,10 @@
   align-items: center;
   justify-content: center;
 }
+.absolute__pos {
+  position: absolute;
+}
+
+a {
+  text-decoration: none;
+}
