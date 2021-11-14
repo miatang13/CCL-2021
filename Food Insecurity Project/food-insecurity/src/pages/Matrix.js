@@ -3,7 +3,7 @@ import "../styles/matrix.css";
 import "../styles/utility.css";
 import icon_data from "../data/iconInfo.json";
 import IconMatrix from "../components/IconMatrix";
-import { icon_img_base_url } from "../data/baseUrls";
+import { icon_img_base_url, icon_img_format } from "../data/baseUrls";
 import description_data from "../data/description.json";
 import { useState } from "react";
 
@@ -47,11 +47,11 @@ export default function Matrix() {
             <IconMatrix
               name={data.name}
               location={data.location}
-              img_src={icon_img_base_url + data.img_src}
+              img_src={icon_img_base_url + data.first_name + icon_img_format}
               blurb={data.blurb}
               key={dataKey}
               onMouseEnter={() => {
-                setName(data.name);
+                setName(data.first_name);
                 setLocation(data.location);
                 setBlurb(data.blurb);
               }}
@@ -72,27 +72,20 @@ export default function Matrix() {
     }
   }
 
-  function Description() {
-    if (iconName !== "") {
-      return (
+  return (
+    <div className="min-vh-100" id="matrix__container">
+      {iconName === "" && (
+        <div id="center__text__container">
+          <p> {description_data.matrix.center_info}</p>
+        </div>
+      )}
+      {iconName !== "" && (
         <div id="center__text__container">
           <span> {iconName} </span>
           <span> {iconLocation} </span>
           <p> {iconBlurb} </p>
         </div>
-      );
-    } else {
-      return (
-        <div id="center__text__container">
-          <p> {description_data.matrix.center_info}</p>
-        </div>
-      );
-    }
-  }
-
-  return (
-    <div className="min-vh-100" id="matrix__container">
-      {Description()}
+      )}
       <div className="vline" id="y__axis"></div>
       <Container fluid className="min-vh-100">
         <Row className="min-vh-10 bottom__align">

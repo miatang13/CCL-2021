@@ -1,18 +1,34 @@
 [
   {
-    "name": "Hullamatou Ceesay",
+    "first_name": "Hullamatou",
+    "last_name": "Ceesay",
     "location": "Bronx, New York",
     "blurb": "Most of America's hungry are native-born, but new immigrants like Hullamatou Ceesay from Gambia struggle too, taking meals wherever they can find them.",
-    "img_src": "Ceesay.png",
     "row_idx": 1,
     "col_idx": 4
   },
   {
-    "name": "Kristin Hahn",
+    "first_name": "Kristin",
+    "last_name": "Hahn",
     "location": "Charles City, Iowa",
     "blurb": "Kristin Hahn and her grandmother, Janet Groven, visit a weekly soup kitchen in Charles City, Iowa. 'By the end of the month we have nothing.'",
-    "img_src": "Hahn.png",
     "row_idx": 0,
     "col_idx": 6
+  },
+  {
+    "first_name": "Amy",
+    "last_name": "",
+    "location": "Pittsburgh, Pennsylvania",
+    "blurb": "I had tears in my eyes when they said I could come. I’m down to the last of my food so what this means to me and my family is we get to eat for the rest of the month and I don’t have to worry. I can sleep – I haven’t slept because in my head, because I’m so worried about making sure we’re ok.",
+    "row_idx": 5,
+    "col_idx": 7
+  },
+  {
+    "first_name": "Terri",
+    "last_name": "",
+    "location": "Brandenton, Florida",
+    "blurb": "Terri Champion is an author. A singer. A scholar. She has two master’s degrees. And she is hungry.",
+    "row_idx": 5,
+    "col_idx": 3
   }
 ]
