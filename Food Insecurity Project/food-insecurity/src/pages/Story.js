@@ -16,8 +16,11 @@ export default function StoryPage({ match }) {
 
   const data = story_data[personName];
   const interactive_content = data.interactive_content;
-  const [contentText, setContentText] = useState(data.bio);
+  const [contentText, setContentText] = useState(
+    interactive_content[0].description
+  );
   const [hiddenNumbersJsx, setHiddenNumberJsx] = useState([]);
+  const [hiddenNumberShow, setHiddenNumberShow] = useState(false);
 
   /**
    * Data UI
@@ -25,18 +28,25 @@ export default function StoryPage({ match }) {
 
   const handleHoverOverNumber = (idx) => {
     setContentText(interactive_content[idx].description);
+    setHiddenNumberShow(true);
+  };
+
+  const handleLeaveNumber = () => {
+    setContentText(data.bio);
+    setHiddenNumberShow(false);
   };
 
   useEffect(() => {
     let spansJsx = [];
     const maxCol = 6;
-    spansJsx.push(<Row className="min-vh-story-number-cell "> </Row>); // for padding on top
+    spansJsx.push(<Row className="min-vh-story-number-cell"> </Row>); // for padding on top
 
     interactive_content.forEach((c, index) => {
       let elem = (
         <div
           className="hidden__num__wrapper"
-          onMouseOver={() => handleHoverOverNumber(index)}
+          onMouseEnter={() => handleHoverOverNumber(index)}
+          onMouseLeave={() => handleLeaveNumber()}
         >
           {c.number} %
         </div>
@@ -57,7 +67,10 @@ export default function StoryPage({ match }) {
     });
 
     spansJsx.push(<Row className="min-vh-story-number-cell "> </Row>); // for padding on bottom
-    let jsx = <Container className="min-vh-100"> {spansJsx} </Container>;
+    spansJsx.push(<Row className="min-vh-story-number-cell "> </Row>); // for padding on bottom
+    let jsx = (
+      <Container className="min-vh-100 min-vw-100"> {spansJsx} </Container>
+    );
     setHiddenNumberJsx(jsx);
   }, []);
 
@@ -127,9 +140,14 @@ export default function StoryPage({ match }) {
 
       <div id="content__container">
         <div id="content__text">
-          <h4> {personName} </h4>
-          <h4> {data.location} </h4>
-          <p> {contentText}</p>
+          {!hiddenNumberShow && (
+            <div>
+              <h4> {personName} </h4>
+              <h4> {data.location} </h4>
+            </div>
+          )}
+
+          <span> {contentText}</span>
         </div>
       </div>
 
