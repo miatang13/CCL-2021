@@ -68,7 +68,7 @@ a {
 }
 
 .page__root {
-  animation: fadein 0.5s ease-in;
+  animation: fadein 0.8s ease-in;
 }
 
 @keyframes fadein {
