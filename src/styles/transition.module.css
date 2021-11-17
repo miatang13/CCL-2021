@@ -1,0 +1,47 @@
+.page-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.page-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.page-exit {
+  opacity: 1;
+}
+.page-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.animate {
+  transition: transform 0.35s ease-in-out;
+}
+
+.animate.opacityAnimateShow {
+  animation: fadein 1.5s ease-in;
+}
+
+.animate.opacityAnimateHide {
+  animation: fadeout 1.5s ease-out;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

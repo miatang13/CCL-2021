@@ -6,6 +6,9 @@ import IconMatrix from "../components/IconMatrix";
 import { icon_img_base_url, icon_img_format } from "../data/baseUrls";
 import description_data from "../data/description.json";
 import { useState } from "react";
+import { Transition } from "react-transition-group";
+import classNames from "classnames";
+import animationStyles from "../styles/transition.module.css";
 
 export default function Matrix() {
   const num_cols = 8;
@@ -14,6 +17,7 @@ export default function Matrix() {
   const [iconName, setName] = useState("");
   const [iconLocation, setLocation] = useState("");
   const [iconBlurb, setBlurb] = useState("");
+  const [showIconInfo, setShowIconInfo] = useState(false);
 
   var matrixContent = [];
   for (let row = 0; row < num_rows; row++) {
@@ -22,7 +26,7 @@ export default function Matrix() {
       let jsxElem = (
         <Row className="min-vh-10">
           <Col>
-            <p>I can solve it myself </p>{" "}
+            <p>I can solve it myself </p>
           </Col>
           <Col xs={10}>
             <hr id="x__axis"></hr>
@@ -52,11 +56,13 @@ export default function Matrix() {
                 setName(data.first_name);
                 setLocation(data.location);
                 setBlurb(data.blurb);
+                setShowIconInfo(true);
               }}
               onMouseLeave={() => {
                 setName("");
                 setLocation("");
                 setBlurb("");
+                setShowIconInfo(false);
               }}
             />
           );
@@ -70,20 +76,34 @@ export default function Matrix() {
     }
   }
 
+  console.log(animationStyles);
+
   return (
     <div className="min-vh-100" id="matrix__container">
-      {iconName === "" && (
-        <div id="center__text__container">
-          <p> {description_data.matrix.center_info}</p>
-        </div>
-      )}
-      {iconName !== "" && (
-        <div id="center__text__container">
-          <span> {iconName} </span>
-          <span> {iconLocation} </span>
-          <p> {iconBlurb} </p>
-        </div>
-      )}
+      <div id="center__text__container">
+        {!showIconInfo && (
+          <div
+            className={classNames(
+              animationStyles.animate,
+              !showIconInfo && animationStyles.opacityAnimateShow
+            )}
+          >
+            <p> {description_data.matrix.center_info}</p>
+          </div>
+        )}
+        {showIconInfo && (
+          <div
+            className={classNames(
+              animationStyles.animate,
+              showIconInfo && animationStyles.opacityAnimateShow
+            )}
+          >
+            <span> {iconName} </span>
+            <span> {iconLocation} </span>
+            <p> {iconBlurb} </p>
+          </div>
+        )}
+      </div>
       <div className="vline" id="y__axis"></div>
       <Container fluid className="min-vh-100">
         <Row className="min-vh-10 bottom__align">
