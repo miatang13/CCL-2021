@@ -34,3 +34,29 @@ hr {
   font-size: 1.2vw;
   color: #9d9d9d;
 }
+
+/* #y__axis {
+  animation: animateHeight 1s ease-in-out;
+}
+
+#x__axis {
+  animation: animateWidth 1s ease-in-out;
+} */
+
+@keyframes animateHeight {
+  from {
+    height: 0;
+  }
+  to {
+    height: 80vh;
+  }
+}
+
+@keyframes animateWidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}

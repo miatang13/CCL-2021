@@ -5,12 +5,26 @@ import icon_data from "../data/iconInfo.json";
 import IconMatrix from "../components/IconMatrix";
 import { icon_img_base_url, icon_img_format } from "../data/baseUrls";
 import description_data from "../data/description.json";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Transition } from "react-transition-group";
 import classNames from "classnames";
 import animationStyles from "../styles/transition.module.css";
+import gsap from "gsap";
 
 export default function Matrix() {
+  let iconRef = useRef([]);
+
+  useEffect(() => {
+    console.log(iconRef.current);
+    gsap.to(iconRef.current, {
+      y: 100,
+      stagger: {
+        each: 0.1,
+        ease: "power2.inOut",
+      },
+    });
+  }, []);
+
   const num_cols = 8;
   const num_rows = 7;
   const horizontal_line_row_idx = 3;
@@ -49,6 +63,7 @@ export default function Matrix() {
         if (data) {
           let iconElem = (
             <IconMatrix
+              className="indiv__icon"
               name={data.first_name}
               img_src={icon_img_base_url + data.first_name + icon_img_format}
               key={dataKey}
@@ -66,7 +81,16 @@ export default function Matrix() {
               }}
             />
           );
-          columns.push(<Col> {iconElem}</Col>);
+          columns.push(
+            <Col
+              ref={(r) => {
+                iconRef.current.push(r);
+              }}
+            >
+              {" "}
+              {iconElem}
+            </Col>
+          );
         } else {
           columns.push(<Col> </Col>);
         }
@@ -77,46 +101,50 @@ export default function Matrix() {
   }
 
   return (
-    <div className="min-vh-100" id="matrix__container">
-      <div className="vline" id="y__axis"></div>
+    <div className="page__root">
+      <div className="min-vh-100" id="matrix__container">
+        <div className="vline" id="y__axis"></div>
 
-      <Container fluid className="min-vh-100">
-        <Row className="min-vh-10 bottom__align">
-          <p className="axis__label" id="bottom__align__content">
-            My condition is chronic{" "}
-          </p>
-        </Row>
-        {matrixContent}
-        <Row className="min-vh-10">
-          <p className="axis__label"> My condition is acute </p>
-        </Row>
-      </Container>
-      <div className="fixed-center" id="center__text__container">
-        {!showIconInfo && (
-          <div
-            className={classNames(
-              animationStyles.animate,
-              !showIconInfo && animationStyles.opacityAnimateShow
-            )}
-          >
-            <span className="emph__text">{description_data.matrix.title}</span>
-            <p className="center__blurb">
-              {description_data.matrix.center_info}
+        <Container fluid className="min-vh-100">
+          <Row className="min-vh-10 bottom__align">
+            <p className="axis__label" id="bottom__align__content">
+              My condition is chronic{" "}
             </p>
-          </div>
-        )}
-        {showIconInfo && (
-          <div
-            className={classNames(
-              animationStyles.animate,
-              showIconInfo && animationStyles.opacityAnimateShow
-            )}
-          >
-            <span className="emph__text"> {iconName} </span>
-            <span className="emph__text"> {iconLocation} </span>
-            <p className="center__blurb"> {iconBlurb} </p>
-          </div>
-        )}
+          </Row>
+          {matrixContent}
+          <Row className="min-vh-10">
+            <p className="axis__label"> My condition is acute </p>
+          </Row>
+        </Container>
+        <div className="fixed-center" id="center__text__container">
+          {!showIconInfo && (
+            <div
+              className={classNames(
+                animationStyles.animate,
+                !showIconInfo && animationStyles.opacityAnimateShow
+              )}
+            >
+              <span className="emph__text">
+                {description_data.matrix.title}
+              </span>
+              <p className="center__blurb">
+                {description_data.matrix.center_info}
+              </p>
+            </div>
+          )}
+          {showIconInfo && (
+            <div
+              className={classNames(
+                animationStyles.animate,
+                showIconInfo && animationStyles.opacityAnimateShow
+              )}
+            >
+              <span className="emph__text"> {iconName} </span>
+              <span className="emph__text"> {iconLocation} </span>
+              <p className="center__blurb"> {iconBlurb} </p>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
