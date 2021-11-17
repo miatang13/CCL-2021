@@ -78,7 +78,7 @@ export default function Matrix() {
 
   return (
     <div className="min-vh-100" id="matrix__container">
-      <div id="center__text__container">
+      <div className="fixed-center" id="center__text__container">
         {!showIconInfo && (
           <div
             className={classNames(
@@ -86,6 +86,7 @@ export default function Matrix() {
               !showIconInfo && animationStyles.opacityAnimateShow
             )}
           >
+            <span className="emph__text">{description_data.matrix.title}</span>
             <p> {description_data.matrix.center_info}</p>
           </div>
         )}
@@ -96,8 +97,8 @@ export default function Matrix() {
               showIconInfo && animationStyles.opacityAnimateShow
             )}
           >
-            <span> {iconName} </span>
-            <span> {iconLocation} </span>
+            <span className="emph__text"> {iconName} </span>
+            <span className="emph__text"> {iconLocation} </span>
             <p> {iconBlurb} </p>
           </div>
         )}

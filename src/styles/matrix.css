@@ -12,16 +12,15 @@ hr {
 }
 
 #center__text__container {
-  position: absolute;
-  margin-top: 40vh;
-  margin-left: 40vw;
-
   color: white;
   width: 22%;
-
   background-color: #121212;
 }
 
 #center__text__container p {
   font-size: 1vw;
+}
+
+.emph__text {
+  font-weight: 800;
 }
