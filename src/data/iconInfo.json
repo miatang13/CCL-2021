@@ -27,8 +27,32 @@
     "first_name": "Terri",
     "last_name": "",
     "location": "Brandenton, Florida",
-    "blurb": "Terri Champion is an author. A singer. A scholar. She has two master’s degrees. And she is hungry.",
+    "blurb": "Terri’s great life suddenly vanished when her job disappeared and she needed help from the food pantry at her local church. Now that she’s back on her feet, she’s a regular volunteer at the pantry that helped stabilize her life.",
     "row_idx": 5,
     "col_idx": 3
+  },
+  {
+    "first_name": "Iker",
+    "last_name": "",
+    "location": "Phoenix, Arizona",
+    "blurb": "Unlike a lot of kids, summer is not Iker's favorite time of the year. He misses school – the classes, teachers, and his friends – but he also knows that summer means no free breakfast and lunch, which he normally eats in school.",
+    "row_idx": 4,
+    "col_idx": 6
+  },
+  {
+    "first_name": "DeAdra",
+    "last_name": "",
+    "location": "Brandenton, Florida",
+    "blurb": "DeAdra wants a better childhood for her three-year-old son with special needs but can't always put food on the table while caring for him full-time. With her local food pantry, DeAdra is now able to provide healthy food for Dacian and herself.",
+    "row_idx": 2,
+    "col_idx": 7
+  },
+  {
+    "first_name": "Mikel",
+    "last_name": "",
+    "location": "Monroe, Louisiana",
+    "blurb": "Mikel's eight years of service in the US Army, including a tour in Iraq, took a significant toll. He suffers from PTSD and is disabled. He tries his best to help the family make ends meet. But he still worries about paying rent, bills, and food for his kids.",
+    "row_idx": 0,
+    "col_idx": 7
   }
 ]

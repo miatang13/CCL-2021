@@ -76,8 +76,6 @@ export default function Matrix() {
     }
   }
 
-  console.log(animationStyles);
-
   return (
     <div className="min-vh-100" id="matrix__container">
       <div id="center__text__container">
