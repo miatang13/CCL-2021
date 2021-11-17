@@ -26,13 +26,13 @@ export default function Matrix() {
       let jsxElem = (
         <Row className="min-vh-10">
           <Col>
-            <p>I can solve it myself </p>
+            <p className="axis__label">I can solve it myself </p>
           </Col>
           <Col xs={10}>
             <hr id="x__axis"></hr>
           </Col>
           <Col>
-            <p> I need help</p>{" "}
+            <p className="axis__label"> I need help</p>{" "}
           </Col>
         </Row>
       );
@@ -78,6 +78,19 @@ export default function Matrix() {
 
   return (
     <div className="min-vh-100" id="matrix__container">
+      <div className="vline" id="y__axis"></div>
+
+      <Container fluid className="min-vh-100">
+        <Row className="min-vh-10 bottom__align">
+          <p className="axis__label" id="bottom__align__content">
+            My condition is chronic{" "}
+          </p>
+        </Row>
+        {matrixContent}
+        <Row className="min-vh-10">
+          <p className="axis__label"> My condition is acute </p>
+        </Row>
+      </Container>
       <div className="fixed-center" id="center__text__container">
         {!showIconInfo && (
           <div
@@ -87,7 +100,9 @@ export default function Matrix() {
             )}
           >
             <span className="emph__text">{description_data.matrix.title}</span>
-            <p> {description_data.matrix.center_info}</p>
+            <p className="center__blurb">
+              {description_data.matrix.center_info}
+            </p>
           </div>
         )}
         {showIconInfo && (
@@ -99,20 +114,10 @@ export default function Matrix() {
           >
             <span className="emph__text"> {iconName} </span>
             <span className="emph__text"> {iconLocation} </span>
-            <p> {iconBlurb} </p>
+            <p className="center__blurb"> {iconBlurb} </p>
           </div>
         )}
       </div>
-      <div className="vline" id="y__axis"></div>
-      <Container fluid className="min-vh-100">
-        <Row className="min-vh-10 bottom__align">
-          <p id="bottom__align__content"> My condition is chronic </p>
-        </Row>
-        {matrixContent}
-        <Row className="min-vh-10">
-          <p> My condition is acute </p>
-        </Row>
-      </Container>
     </div>
   );
 }
