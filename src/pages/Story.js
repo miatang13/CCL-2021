@@ -7,8 +7,15 @@ import "../styles/story.css";
 import "../styles/mouseMask.css";
 import { Col, Container, Nav, Navbar, Row } from "react-bootstrap";
 import { getRandomInt } from "../utility/random";
+import animationStyles from "../styles/transition.module.css";
 
 export default function StoryPage({ match }) {
+  /**
+   * Animation
+   */
+  const contentRef = useRef();
+  const [showNumberInfo, setShowNumberInfo] = useState(false);
+
   const {
     params: { personName },
   } = match;
@@ -28,12 +35,14 @@ export default function StoryPage({ match }) {
     setHeader(interactive_content[idx].data);
     setSubheader("BEHIND THE NUMBERS");
     setContentText(interactive_content[idx].story_blurb);
+    setShowNumberInfo(true);
   };
 
   const handleLeaveNumber = () => {
     setHeader(personName);
     setSubheader(data.location);
     setContentText(data.bio);
+    setShowNumberInfo(false);
   };
 
   useEffect(() => {
@@ -119,7 +128,7 @@ export default function StoryPage({ match }) {
   }, []);
 
   return (
-    <div>
+    <div className="page__root">
       <div class="mask-wrapper">
         <div class="mask-bg-color full-size"></div>
         <div class="blend-multiply full-size">
@@ -140,12 +149,32 @@ export default function StoryPage({ match }) {
           </div>
         </div>
       </div>
-
-      <div id="content__container">
-        <h4 id="header"> {header}</h4>
-        <h4 id="subheader"> {subheader}</h4>
-        <span id="paragraph"> {paragraph}</span>
-      </div>
+      {showNumberInfo && (
+        <div
+          id="content__container"
+          className={classNames(
+            animationStyles.animate,
+            showNumberInfo && animationStyles.opacityAnimateShow
+          )}
+        >
+          <h4 id="header"> {header}</h4>
+          <h4 id="subheader"> {subheader}</h4>
+          <span id="paragraph"> {paragraph}</span>
+        </div>
+      )}
+      {!showNumberInfo && (
+        <div
+          id="content__container"
+          className={classNames(
+            animationStyles.animate,
+            !showNumberInfo && animationStyles.opacityAnimateShow
+          )}
+        >
+          <h4 id="header"> {header}</h4>
+          <h4 id="subheader"> {subheader}</h4>
+          <span id="paragraph"> {paragraph}</span>
+        </div>
+      )}
 
       <Navbar class="absolute__pos">
         <Link to="/matrix">

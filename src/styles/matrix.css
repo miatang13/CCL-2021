@@ -12,16 +12,59 @@ hr {
 }
 
 #center__text__container {
-  position: absolute;
-  margin-top: 40vh;
-  margin-left: 40vw;
-
   color: white;
-  width: 22%;
-
+  width: 28%;
   background-color: #121212;
 }
 
-#center__text__container p {
-  font-size: 1vw;
+.emph__text {
+  font-weight: 800;
+  font-family: GraphikMedium;
+  font-size: 1.2vw;
+  color: #9d9d9d;
+}
+
+.axis__label {
+  font-family: GraphikMedium;
+  color: #9d9d9d;
+}
+
+.center__blurb {
+  font-family: GraphikRegular;
+  font-size: 1.2vw;
+  color: #9d9d9d;
+}
+
+/* #y__axis {
+  animation: animateHeight 1s ease-in-out;
+} */
+
+#x__axis {
+  /* animation: animateWidth 1s ease-in-out; */
+  width: 0;
+  color: #9d9d9d;
+  border: 0.5px;
+}
+
+@keyframes animateHeight {
+  from {
+    height: 0;
+  }
+  to {
+    height: 80vh;
+  }
+}
+
+@keyframes animateWidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* for animation */
+.indiv__icon__wrapper {
+  opacity: 0;
 }

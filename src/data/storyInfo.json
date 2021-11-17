@@ -37,5 +37,20 @@
         "source": "https://www.census.gov/programs-surveys/household-pulse-survey/data.html"
       }
     ]
+  },
+  "Iker": {
+    "location": "Phoenix, Arizona",
+    "bio": "Unlike a lot of kids, summer is not Iker's favorite time of the year. He misses school – the classes, teachers, and his friends – but he also knows that summer means no free breakfast and lunch, which he normally eats in school.",
+    "interactive_content": []
+  },
+  "DeAdra": {
+    "location": "Brandenton, Florida",
+    "bio": "DeAdra wants a better childhood for her three-year-old son with special needs but can't always put food on the table while caring for him full-time. With her local food pantry, DeAdra is now able to provide healthy food for Dacian and herself.",
+    "interactive_content": []
+  },
+  "Mikel": {
+    "location": "Monroe, Louisiana",
+    "bio": "Mikel's eight years of service in the US Army, including a tour in Iraq, took a significant toll. He suffers from PTSD and is disabled. He tries his best to help the family make ends meet. But he still worries about paying rent, bills, and food for his kids.",
+    "interactive_content": []
   }
 }
