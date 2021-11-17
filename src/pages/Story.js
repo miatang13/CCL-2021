@@ -119,7 +119,7 @@ export default function StoryPage({ match }) {
   }, []);
 
   return (
-    <div>
+    <div className="page__root">
       <div class="mask-wrapper">
         <div class="mask-bg-color full-size"></div>
         <div class="blend-multiply full-size">

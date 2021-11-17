@@ -37,11 +37,14 @@ hr {
 
 /* #y__axis {
   animation: animateHeight 1s ease-in-out;
-}
+} */
 
 #x__axis {
-  animation: animateWidth 1s ease-in-out;
-} */
+  /* animation: animateWidth 1s ease-in-out; */
+  width: 0;
+  color: #9d9d9d;
+  border: 0.5px;
+}
 
 @keyframes animateHeight {
   from {
@@ -59,4 +62,9 @@ hr {
   to {
     width: 100%;
   }
+}
+
+/* for animation */
+.indiv__icon__wrapper {
+  opacity: 0;
 }

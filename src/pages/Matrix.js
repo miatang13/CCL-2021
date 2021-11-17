@@ -12,15 +12,44 @@ import animationStyles from "../styles/transition.module.css";
 import gsap from "gsap";
 
 export default function Matrix() {
+  /**
+   * Animations
+   */
   let iconRef = useRef([]);
+  let xAxisRef = useRef();
+  let yAxisRef = useRef();
 
   useEffect(() => {
-    console.log(iconRef.current);
-    gsap.to(iconRef.current, {
-      y: 100,
+    const tl = gsap.timeline({ delay: 1 });
+    tl.to(
+      xAxisRef.current,
+      {
+        opacity: "100%",
+        width: "100%",
+        duration: 0.5,
+        ease: "power2.easeInOut",
+      },
+      0.3
+    );
+    tl.to(
+      yAxisRef.current,
+      {
+        opacity: "100%",
+        height: "80vh",
+        duration: 0.5,
+        ease: "power2.easeInOut",
+      },
+      0.5
+    );
+    tl.to(iconRef.current, {
+      y: 0,
+      x: 0,
+      opacity: "100%",
+      duration: 1.2,
+      ease: "power2.easeInOut",
       stagger: {
         each: 0.1,
-        ease: "power2.inOut",
+        ease: "power2.easeInOut",
       },
     });
   }, []);
@@ -43,7 +72,12 @@ export default function Matrix() {
             <p className="axis__label">I can solve it myself </p>
           </Col>
           <Col xs={10}>
-            <hr id="x__axis"></hr>
+            <hr
+              ref={(r) => {
+                xAxisRef.current = r;
+              }}
+              id="x__axis"
+            ></hr>
           </Col>
           <Col>
             <p className="axis__label"> I need help</p>{" "}
@@ -63,7 +97,6 @@ export default function Matrix() {
         if (data) {
           let iconElem = (
             <IconMatrix
-              className="indiv__icon"
               name={data.first_name}
               img_src={icon_img_base_url + data.first_name + icon_img_format}
               key={dataKey}
@@ -83,6 +116,7 @@ export default function Matrix() {
           );
           columns.push(
             <Col
+              className="indiv__icon__wrapper"
               ref={(r) => {
                 iconRef.current.push(r);
               }}
@@ -103,7 +137,11 @@ export default function Matrix() {
   return (
     <div className="page__root">
       <div className="min-vh-100" id="matrix__container">
-        <div className="vline" id="y__axis"></div>
+        <div
+          className="vline"
+          id="y__axis"
+          ref={(r) => (yAxisRef.current = r)}
+        ></div>
 
         <Container fluid className="min-vh-100">
           <Row className="min-vh-10 bottom__align">
