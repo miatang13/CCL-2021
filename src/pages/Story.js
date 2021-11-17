@@ -1,4 +1,3 @@
-import Button from "@restart/ui/esm/Button";
 import { Link } from "react-router-dom";
 import { story_img_base_url, story_img_format } from "../data/baseUrls";
 import story_data from "../data/storyInfo.json";
@@ -152,7 +151,6 @@ export default function StoryPage({ match }) {
         <Link to="/matrix">
           <Nav>
             <Nav.Link id="nav__btn" href="/matrix">
-              {" "}
               Return to matrix
             </Nav.Link>
           </Nav>
