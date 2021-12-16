@@ -2,17 +2,74 @@
   "Hullamatou": {
     "location": "Bronx, New York",
     "bio": "A mother of nine, Hullamatou Ceesay, 31, returns with two of her daughters from a visit to Part of the Solution, a Bronx food pantry. Bags of cereal, pasta, bread, and canned foods will last the family three days. When those supplies run out, they will rely on stores that offer food on credit and on neighbors willing to share. When her children as for food she doesn't have, Ceesay says, “I get sad.”",
-    "interactive_content": []
+    "interactive_content": [
+      {
+        "data": "Over 27% of single mothers are food insecure.",
+        "story_blurb": "",
+        "number": 27,
+        "source": "https://www.ers.usda.gov/data-products/chart-gallery/gallery/chart-detail/?chartId=58384"
+      },
+      {
+        "data": "In Bronx County, NY 3.1% of food insecure households do not qualify for federal nutrition programs because their income is too high.",
+        "story_blurb": "",
+        "number": 3,
+        "source": "https://www.census.gov/data/datasets/2019/demo/cps/cps-food-security.html"
+      },
+      {
+        "data": "In Bronx County, NY 25% of children are food insecure.",
+        "story_blurb": "",
+        "number": 25,
+        "source": "https://www.census.gov/data/datasets/2019/demo/cps/cps-food-security.html"
+      }
+    ]
   },
   "Kristin": {
     "location": "Charles City, Iowa",
     "bio": " Kristin Hahn and her grandmother, Janet Groven, visit a weekly soup kitchen in Charles City, Iowa. “By the end of the month we have nothing.” says Groven, who also depends on a food pantry to feed her family. Of America's 48 million 'food insecure' more than half are white, and more than half live outside cities",
-    "interactive_content": []
+    "interactive_content": [
+      {
+        "data": "In Floyd County, Iowa 11.5% of residents are food insecure.",
+        "story_blurb":"",
+        "number": 11,
+        "source": "https://www.census.gov/data/datasets/2019/demo/cps/cps-food-security.html"
+      },
+      {
+        "data": "In Floyd County, Iowa, 37.5% of food insecure households do not quality for federal nutrition programs because their income is too high.",
+        "story_blurb":"",
+        "number": 37,
+        "source": "https://www.census.gov/data/datasets/2019/demo/cps/cps-food-security.html"
+      },
+      {
+        "data": "In Floyd County, Iowa, 18% of children are food insecure. ",
+        "story_blurb":"",
+        "number": 18,
+        "source": "https://www.census.gov/data/datasets/2019/demo/cps/cps-food-security.html"
+      }
+    ]
   },
   "Amy": {
     "location": "Pittsburgh, Pennsylvania",
     "bio": "Amy is living with her daughter and has never used food assistance before. Amy is fighting a rare type of cancer and because of COVID-19 her daughter is unable to work. “We ran out of money because my daughter was working at the hospital and she had to stop because I have cancer and she worked at the hospital. She’s my caregiver so we had to find some food and they directed us down here.”",
-    "interactive_content": []
+    "interactive_content": [
+      {
+        "data": "In Allegheny County, Pennsylvania 10.4% of residents are food insecure.",
+        "story_blurb":"",
+        "number": 10,
+        "source": "https://www.census.gov/data/datasets/2019/demo/cps/cps-food-security.html"
+      },
+      {
+        "data": "In Allegheny County, Pennslyvannia 44.3% of food insecure households do not quality for federal nutrition programs because their income is too high.",
+        "story_blurb":"",
+        "number": 44,
+        "source": "https://www.census.gov/data/datasets/2019/demo/cps/cps-food-security.html"
+      },
+      {
+        "data": "In 2020, 17.5% of food insecure households were unable to work because of COVID-19. ",
+        "story_blurb":"",
+        "number": 17,
+        "source": "https://www.census.gov/data/datasets/2019/demo/cps/cps-food-security.html"
+      }
+    ]
   },
   "Terri": {
     "location": "Brandenton, Florida",
@@ -41,16 +98,73 @@
   "Iker": {
     "location": "Phoenix, Arizona",
     "bio": "Unlike a lot of kids, summer is not Iker's favorite time of the year. He misses school – the classes, teachers, and his friends – but he also knows that summer means no free breakfast and lunch, which he normally eats in school.",
-    "interactive_content": []
+    "interactive_content": [
+      {
+        "data": "In Maricopa County, 11.7% of residents are food insecure.",
+        "story_blurb": "",
+        "number": 11,
+        "source": "https://www.ers.usda.gov/data-products/chart-gallery/gallery/chart-detail/?chartId=58384"
+      },
+      {
+        "data": "In Maricopa County, Arizona, 36% of food insecure households do not quality for federal nutrition programs because their income is too high.",
+        "story_blurb": "",
+        "number": 36,
+        "source": "https://www.census.gov/data/datasets/2019/demo/cps/cps-food-security.html"
+      },
+      {
+        "data": "In Maricopa County, 16.3% of children are food insecure. ",
+        "story_blurb": "",
+        "number": 16,
+        "source": "https://www.census.gov/data/datasets/2019/demo/cps/cps-food-security.html"
+      }
+    ]
   },
   "DeAdra": {
     "location": "Brandenton, Florida",
     "bio": "DeAdra wants a better childhood for her three-year-old son with special needs but can't always put food on the table while caring for him full-time. With her local food pantry, DeAdra is now able to provide healthy food for Dacian and herself.",
-    "interactive_content": []
+    "interactive_content": [
+      {
+        "data": "In Manatee County, Florida, 12% of residents are food insecure.",
+        "story_blurb": "",
+        "number": 12,
+        "source": "https://www.ers.usda.gov/data-products/chart-gallery/gallery/chart-detail/?chartId=58384"
+      },
+      {
+        "data": "In Manatee County, 36.3% of food insecure households do not quality for federal nutrition programs because their income is too high.",
+        "story_blurb": "",
+        "number": 36,
+        "source": "https://www.census.gov/data/datasets/2019/demo/cps/cps-food-security.html"
+      },
+      {
+        "data": "In Manatee County, 16.4% of children are food insecure.",
+        "story_blurb": "",
+        "number": 16,
+        "source": "https://www.census.gov/data/datasets/2019/demo/cps/cps-food-security.html"
+      }
+    ]
   },
   "Mikel": {
     "location": "Monroe, Louisiana",
     "bio": "Mikel's eight years of service in the US Army, including a tour in Iraq, took a significant toll. He suffers from PTSD and is disabled. He tries his best to help the family make ends meet. But he still worries about paying rent, bills, and food for his kids.",
-    "interactive_content": []
+    "interactive_content": [
+      {
+        "data": "In Ouachita Parish, Louisiana, 17% of residents are food insecure.",
+        "story_blurb": "",
+        "number": 17,
+        "source": "https://www.ers.usda.gov/data-products/chart-gallery/gallery/chart-detail/?chartId=58384"
+      },
+      {
+        "data": "In Ouachita Parish, Louisiana, 31.1% of food insecure households do not quality for federal nutrition programs because their income is too high.",
+        "story_blurb": "",
+        "number": 31,
+        "source": "https://www.census.gov/data/datasets/2019/demo/cps/cps-food-security.html"
+      },
+      {
+        "data": "In Ouachita Parish, Louisiana, 19.7% of children are food insecure.",
+        "story_blurb": "",
+        "number": 19,
+        "source": "https://www.census.gov/data/datasets/2019/demo/cps/cps-food-security.html"
+      }
+    ]
   }
 }
