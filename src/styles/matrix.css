@@ -15,6 +15,7 @@ hr {
   color: white;
   width: 28%;
   background-color: #121212;
+  opacity: 0;
 }
 
 .emph__text {
@@ -67,4 +68,5 @@ hr {
 /* for animation */
 .indiv__icon__wrapper {
   opacity: 0;
+  transition: all 0.5s cubic-bezier(0.52, 0.01, 0.16, 1);
 }

@@ -129,18 +129,18 @@ export default function StoryPage({ match }) {
 
   return (
     <div className="page__root">
-      <div class="mask-wrapper">
-        <div class="mask-bg-color full-size"></div>
-        <div class="blend-multiply full-size">
+      <div className="mask-wrapper">
+        <div className="mask-bg-color full-size"></div>
+        <div className="blend-multiply full-size">
           <img
-            class="bg full-size"
+            className="bg full-size"
             ref={bgRef}
             src={story_img_base_url + personName + story_img_format}
             alt="background"
           />
-          <div class="blend-screen">{hiddenNumbersJsx}</div>
+          <div className="blend-screen">{hiddenNumbersJsx}</div>
 
-          <div class="blend-screen element-mask full-size">
+          <div className="blend-screen element-mask full-size">
             <span
               id="circle"
               className={classNames("circle-follow", { moving: isMoving })}
@@ -176,14 +176,12 @@ export default function StoryPage({ match }) {
         </div>
       )}
 
-      <Navbar class="absolute__pos">
-        <Link to="/matrix">
-          <Nav>
-            <Nav.Link id="nav__btn" href="/matrix">
-              Return to matrix
-            </Nav.Link>
-          </Nav>
-        </Link>
+      <Navbar className="absolute__pos">
+        <Nav>
+          <Nav.Link id="nav__btn" href="/matrix">
+            Return to matrix
+          </Nav.Link>
+        </Nav>
       </Navbar>
     </div>
   );

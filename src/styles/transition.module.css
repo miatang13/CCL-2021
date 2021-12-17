@@ -21,11 +21,11 @@
 }
 
 .animate.opacityAnimateShow {
-  animation: fadein 1.5s ease-in;
+  animation: fadein 1s ease-in;
 }
 
 .animate.opacityAnimateHide {
-  animation: fadeout 1.5s ease-out;
+  animation: fadeout 1s ease-out;
 }
 
 @keyframes fadein {

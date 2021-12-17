@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <CSSTransition>
+        <CSSTransition timeout={350}>
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route path="/matrix" component={Matrix} />

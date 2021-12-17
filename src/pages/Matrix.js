@@ -6,12 +6,17 @@ import IconMatrix from "../components/IconMatrix";
 import { icon_img_base_url, icon_img_format } from "../data/baseUrls";
 import description_data from "../data/description.json";
 import { useEffect, useRef, useState } from "react";
-import { Transition } from "react-transition-group";
 import classNames from "classnames";
 import animationStyles from "../styles/transition.module.css";
 import gsap from "gsap";
 
 export default function Matrix() {
+  const [iconName, setName] = useState("");
+  const [iconLocation, setLocation] = useState("");
+  const [iconBlurb, setBlurb] = useState("");
+  const [showIconInfo, setShowIconInfo] = useState(true);
+  const [displayDataKey, setDataKey] = useState(-1);
+
   /**
    * Animations
    */
@@ -20,7 +25,15 @@ export default function Matrix() {
   let yAxisRef = useRef();
 
   useEffect(() => {
-    const tl = gsap.timeline({ delay: 1 });
+    const callBack = () => {
+      setShowIconInfo(false);
+      let description_div = document.getElementById("center__text__container");
+      gsap.to(description_div, {
+        opacity: "100%",
+      });
+    };
+
+    const tl = gsap.timeline({ delay: 1, onComplete: callBack });
     tl.to(
       xAxisRef.current,
       {
@@ -45,7 +58,7 @@ export default function Matrix() {
       y: 0,
       x: 0,
       opacity: "100%",
-      duration: 1.2,
+      duration: 0.5,
       ease: "power2.easeInOut",
       stagger: {
         each: 0.1,
@@ -57,10 +70,6 @@ export default function Matrix() {
   const num_cols = 8;
   const num_rows = 7;
   const horizontal_line_row_idx = 3;
-  const [iconName, setName] = useState("");
-  const [iconLocation, setLocation] = useState("");
-  const [iconBlurb, setBlurb] = useState("");
-  const [showIconInfo, setShowIconInfo] = useState(false);
 
   var matrixContent = [];
   for (let row = 0; row < num_rows; row++) {
@@ -105,6 +114,7 @@ export default function Matrix() {
                 setLocation(data.location);
                 setBlurb(data.blurb);
                 setShowIconInfo(true);
+                setDataKey(dataKey);
               }}
               onMouseLeave={() => {
                 setName("");
@@ -119,6 +129,10 @@ export default function Matrix() {
               className="indiv__icon__wrapper"
               ref={(r) => {
                 iconRef.current.push(r);
+              }}
+              style={{
+                opacity:
+                  !showIconInfo || displayDataKey === dataKey ? "100%" : "0",
               }}
             >
               {" "}
