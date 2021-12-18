@@ -9,11 +9,11 @@
 }
 
 .min-vh-10 {
-  min-height: 1vh;
+  min-height: 8vh;
 }
 
 .min-vh-grid-cell {
-  min-height: 12vh;
+  min-height: 10vh;
 }
 
 .vline {

@@ -29,7 +29,8 @@ hr {
   font-weight: 800;
   font-family: GraphikMedium;
   font-size: 1.2vw;
-  color: #696969;
+  color: #5a5a5a;
+  font-style: italic;
 }
 
 .axis__label {

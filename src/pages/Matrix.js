@@ -10,6 +10,7 @@ import classNames from "classnames";
 import animationStyles from "../styles/transition.module.css";
 import gsap from "gsap";
 import NavBar from "../components/NavBar";
+import InfoModal from "../components/InfoModal";
 
 export default function Matrix() {
   const [iconName, setName] = useState("");
@@ -149,6 +150,8 @@ export default function Matrix() {
     }
   }
 
+  const [modalShow, setModalShow] = useState(false);
+
   return (
     <div className="page__root ">
       <div className="min-vh-100 " id="matrix__container">
@@ -158,7 +161,7 @@ export default function Matrix() {
           ref={(r) => (yAxisRef.current = r)}
         ></div>
         <Container fluid className="min-vh-100">
-          <NavBar />
+          <NavBar style={{ position: "absolute" }} />
           <Row className="min-vh-10 bottom__align">
             <p
               style={{ backgroundColor: "#121212" }}
@@ -173,6 +176,14 @@ export default function Matrix() {
             <p style={{ backgroundColor: "#121212" }} className="axis__label">
               My condition is acute
             </p>
+          </Row>
+          <Row>
+            <Col md={{ span: 1, offset: 11 }}>
+              <Button variant="dark" onClick={() => setModalShow(true)}>
+                About
+              </Button>
+              <InfoModal show={modalShow} onHide={() => setModalShow(false)} />{" "}
+            </Col>
           </Row>
         </Container>
         <div className="fixed-center" id="center__text__container">
