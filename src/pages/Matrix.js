@@ -173,7 +173,7 @@ export default function Matrix() {
           </Row>
           {matrixContent}
           <Row className="min-vh-10">
-            <p style={{ backgroundColor: "#121212" }} className="axis__label">
+            <p className="axis__label" id="bottom__axis">
               My condition is acute
             </p>
           </Row>
