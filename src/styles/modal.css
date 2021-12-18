@@ -1,0 +1,23 @@
+.modal-content {
+  background-color: #121212;
+  color: #9d9d9d;
+  border: 1px rgb(163, 163, 163) solid;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.modal-body {
+  font-family: GraphikRegular;
+  color: #9d9d9d;
+}
+
+.modal-title {
+  font-family: GraphikMedium;
+  color: #9d9d9d;
+}

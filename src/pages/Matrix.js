@@ -1,4 +1,4 @@
-import { Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import "../styles/matrix.css";
 import "../styles/utility.css";
 import icon_data from "../data/iconInfo.json";
@@ -9,6 +9,7 @@ import { useEffect, useRef, useState } from "react";
 import classNames from "classnames";
 import animationStyles from "../styles/transition.module.css";
 import gsap from "gsap";
+import NavBar from "../components/NavBar";
 
 export default function Matrix() {
   const [iconName, setName] = useState("");
@@ -48,7 +49,7 @@ export default function Matrix() {
       yAxisRef.current,
       {
         opacity: "100%",
-        height: "80vh",
+        height: "100vh",
         duration: 0.5,
         ease: "power2.easeInOut",
       },
@@ -149,23 +150,29 @@ export default function Matrix() {
   }
 
   return (
-    <div className="page__root">
-      <div className="min-vh-100" id="matrix__container">
+    <div className="page__root ">
+      <div className="min-vh-100 " id="matrix__container">
         <div
           className="vline"
           id="y__axis"
           ref={(r) => (yAxisRef.current = r)}
         ></div>
-
         <Container fluid className="min-vh-100">
+          <NavBar />
           <Row className="min-vh-10 bottom__align">
-            <p className="axis__label" id="bottom__align__content">
-              My condition is chronic{" "}
+            <p
+              style={{ backgroundColor: "#121212" }}
+              className="axis__label"
+              id="bottom__align__content"
+            >
+              My condition is chronic
             </p>
           </Row>
           {matrixContent}
           <Row className="min-vh-10">
-            <p className="axis__label"> My condition is acute </p>
+            <p style={{ backgroundColor: "#121212" }} className="axis__label">
+              My condition is acute
+            </p>
           </Row>
         </Container>
         <div className="fixed-center" id="center__text__container">
@@ -191,8 +198,8 @@ export default function Matrix() {
                 showIconInfo && animationStyles.opacityAnimateShow
               )}
             >
-              <span className="emph__text"> {iconName} </span>
-              <span className="emph__text"> {iconLocation} </span>
+              <span className="emph__text"> {iconName}, </span>
+              <span className="sub__emph__text"> {iconLocation} </span>
               <p className="center__blurb"> {iconBlurb} </p>
             </div>
           )}
